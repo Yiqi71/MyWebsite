@@ -1,0 +1,12 @@
+body {
+    background-color: aliceblue;
+}
+
+main img {
+    transition: 1.5s;
+}
+
+main img:hover {
+
+    width: 250px;
+}
