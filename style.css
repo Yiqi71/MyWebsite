@@ -140,11 +140,19 @@ table {
 /* below */
 body{
     display: flex;
+    flex-direction: column;
     font-family: "futura-pt", sans-serif;
 }
 h1{
     font-size: 24pt;
 }
 menu{
+    display: flex;
     background-color: aliceblue;
+}
+.project{
+    margin: 1em;
+}
+.title{
+    margin: 1em;
 }
