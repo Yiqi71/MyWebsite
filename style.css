@@ -150,7 +150,7 @@ h1{
 }
 
 menu{
-    width: calc(80% - 40px);
+    width: calc(100% - 40px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -161,7 +161,11 @@ menu{
     padding:20px;
 }
 
-
+menu #tags{
+    width:50%;
+    display: flex;
+    justify-content: space-around;
+}
 
 .project{
     margin: 1em;
@@ -169,14 +173,14 @@ menu{
     top:5em;
 }
 .project img {
-    width: 80%; /* 确保图片自适应容器 */
+    width: 100%; /* 确保图片自适应容器 */
     display: block;
 }
 .project .title{
     position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(80% - 40px);
+    width: calc(100% - 40px);
     padding: 20px;
     margin:0;
     background: rgba(0, 0, 0, 0.6);
