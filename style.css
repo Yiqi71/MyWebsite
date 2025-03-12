@@ -183,6 +183,7 @@ menu #tags{
 .project img {
     width: 100%; /* 确保图片自适应容器 */
     display: block;
+    max-width: 600px;
 }
 .project .title{
     position: absolute;
