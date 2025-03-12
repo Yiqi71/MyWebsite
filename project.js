@@ -1,5 +1,3 @@
-
-
 // 获取 URL 参数
 const urlParams = new URLSearchParams(window.location.search);
 const projectId = urlParams.get('id');
@@ -11,12 +9,15 @@ const project = projects[projectId];
 if (project) {
     document.title = project.title;
     document.getElementById('project-detail').innerHTML = `
+        
+        <img src="${project.image}" alt="${project.title}" width="600">
+        <div>
         <h1>${project.title}</h1>
         <p>${project.description}</p>
         <p>${project.date}</p>
-        <img src="${project.image}" alt="${project.title}" width="600">
-        <p>${project.detail}</p>
-    `;
+        </div> `+
+        project.detail  
+   ;
 } else {
     document.getElementById('project-detail').innerHTML = "<p>项目未找到。</p>";
 }

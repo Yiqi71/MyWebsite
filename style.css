@@ -138,18 +138,51 @@ table {
 
 
 /* below */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* List styling */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
 body {
     display: flex;
     flex-direction: column;
     font-family: "futura-pt", sans-serif;
     background-color: rgb(52, 53, 53);
-    color: aliceblue;
-    
+    color: #f0f8ff;
+    align-items: center;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+menu {
+    height:60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(52, 53, 53);
+    position: fixed;
+    z-index: 10;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top: 60px;
+    margin: 0 20px;
+    /* background-color: aquamarine; */
 }
 
 menu #tags {
@@ -192,32 +225,75 @@ menu #tags h1 a.active {
 }
 
 
-/* 小型桌面 */
-@media (min-width: 1025px) {
-    h1 {
-        font-size: 32px;
-    }
-
-    p {
-        font-size: 18px;
-    }
+.project .title {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: height 0.3s ease;
 }
 
-/* 平板 */
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 16px;
-    }
+.project .title p {
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
+
+.project:hover .title p {
+    opacity: 1;
+}
+
+.title {
+    margin: 1em;
+}
+
+/* 主体排版 */
+.intro-container {
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    gap: 20px;
+    /* 图片和文本之间的间距 */
+    position: relative;
+    top: 5em;
+}
+
+/* 图片样式 */
+.intro-container img {
+    width: 300px;
+    height: auto;
+    /* border-radius: 10px;  */
+}
+
+/* 文字部分 */
+.intro-text {
+    width: 400px;
+}
+
+.intro-text h1 {
+    margin: 0;
+}
+
+.intro-text p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+
+
+
+#project-detail{
+    flex-direction: column;
+}
+
+
 
 /* 手机 */
 @media(max-width: 650px) {
-
-
     h1 {
         letter-spacing: 0.5px;
         font-size: 20px;
@@ -229,27 +305,11 @@ menu #tags h1 a.active {
     }
 
     menu {
-        width: calc(100vw - 100px);
-        height:60px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgb(52, 53, 53);
-        position: fixed;
-        z-index: 10;
+        width: calc(100vw - 60px);
     }
-
-    #projects {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        position: absolute;
-        top: 60px;
-        margin: 0 20px;
-        background-color: aquamarine;
+    menu #tags {
+        gap: 25px;
     }
-
     .project {
         margin: 20px 0;
         position: relative;
@@ -262,96 +322,21 @@ menu #tags h1 a.active {
     }
 
     .project .title {
-        position: absolute;
-        bottom: 0;
         width: calc(100% - 40px);
-        padding: 20px;
-        margin: 0;
-        background: rgba(0, 0, 0, 0.6);
-        display: flex;
-        flex-direction: column;
-        height: 20px;
+        height: 15px;
         /* 初始高度，仅容纳 h1 */
-        overflow: hidden;
-        transition: height 0.3s ease;
-    }
-
-    .project .title p {
-        opacity: 0;
-        transition: opacity 0.3s ease;
     }
 
     .project:hover .title {
-        height: 50px;
+        height: 45px;
         /* 悬停时的高度，容纳 h1 和 p 标签 */
-    }
-
-    .project:hover .title p {
-        opacity: 1;
-    }
-
-    .title {
-        margin: 1em;
-    }
-
-
-
-    /* 主体排版 */
-    .intro-container {
-        display: flex;
-        align-items: center;
-        /* 垂直居中 */
-        justify-content: center;
-        gap: 20px;
-        /* 图片和文本之间的间距 */
-        position: relative;
-        top: 5em;
-    }
-
-    /* 图片样式 */
-    .intro-container img {
-        width: 300px;
-        height: auto;
-        /* border-radius: 10px;  */
-    }
-
-    /* 文字部分 */
-    .intro-text {
-        width: 400px;
-    }
-
-    .intro-text h1 {
-        margin: 0;
-    }
-
-    .intro-text p {
-        margin-top: 10px;
-        line-height: 1.5;
     }
 
 }
 
 @media(min-width: 651px) {
     menu {
-        width: calc(100% - 40px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgb(52, 53, 53);
-        /* color: rgb(52, 53, 53); */
-        position: fixed;
-        z-index: 10;
-        padding: 20px;
-    }
-
-
-    #projects {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        position: absolute;
-        top: 60px;
+        width: calc(100% - 60px);
     }
 
     .project {
@@ -362,28 +347,13 @@ menu #tags h1 a.active {
 
     .project img {
         width: 600px;
-        /* 确保图片自适应容器 */
         display: block;
     }
 
     .project .title {
-        position: absolute;
-        bottom: 0;
         width: calc(600px - 40px);
-        padding: 20px;
-        margin: 0;
-        background: rgba(0, 0, 0, 0.6);
-        display: flex;
-        flex-direction: column;
         height: 30px;
         /* 初始高度，仅容纳 h1 */
-        overflow: hidden;
-        transition: height 0.3s ease;
-    }
-
-    .project .title p {
-        opacity: 0;
-        transition: opacity 0.3s ease;
     }
 
     .project:hover .title {
@@ -391,51 +361,40 @@ menu #tags h1 a.active {
         /* 悬停时的高度，容纳 h1 和 p 标签 */
     }
 
-    .project:hover .title p {
-        opacity: 1;
-    }
-
-    .title {
-        margin: 1em;
-    }
-
-
-
-    /* 主体排版 */
-    .intro-container {
-        display: flex;
-        align-items: center;
-        /* 垂直居中 */
-        justify-content: center;
-        gap: 20px;
-        /* 图片和文本之间的间距 */
-        position: relative;
-        top: 5em;
-    }
-
-    /* 图片样式 */
-    .intro-container img {
-        width: 300px;
-        height: auto;
-        /* border-radius: 10px;  */
-    }
-
-    /* 文字部分 */
-    .intro-text {
-        width: 400px;
-    }
-
-    .intro-text h1 {
-        margin: 0;
-    }
-
-    .intro-text p {
-        margin-top: 10px;
-        line-height: 1.5;
-    }
-
 }
 
+/* 小型桌面 */
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+/* 平板 */
+@media (min-width: 651px)and (max-width: 1024px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .project .title {
+        width: calc(100% - 40px);
+        height: 20px;
+        /* 初始高度，仅容纳 h1 */
+    }
+
+    .project:hover .title {
+        height: 55px;
+        /* 悬停时的高度，容纳 h1 和 p 标签 */
+    }
+}
 
 .poppins-thin {
     font-family: "Poppins", sans-serif;
