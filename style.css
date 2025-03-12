@@ -148,6 +148,14 @@ body{
 h1{
     font-size: 24pt;
 }
+#tags a {
+    text-decoration: none; /* 去除默认下划线 */
+    color: inherit; /* 继承父元素颜色 */
+}
+
+#tags a:hover {
+    color: gray; /* 悬停时改变颜色 */
+}
 
 menu{
     width: calc(100% - 40px);
@@ -202,4 +210,37 @@ menu #tags{
 
 .title{
     margin: 1em;
+}
+
+
+
+/* 主体排版 */
+.intro-container {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center;
+    gap: 20px; /* 图片和文本之间的间距 */
+    position:relative;
+    top:5em;
+}
+
+/* 图片样式 */
+.intro-container img {
+    width: 300px;
+    height: auto;
+    /* border-radius: 10px;  */
+}
+
+/* 文字部分 */
+.intro-text{
+    width:400px;
+}
+.intro-text h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.intro-text p {
+    margin-top: 10px;
+    line-height: 1.5;
 }
