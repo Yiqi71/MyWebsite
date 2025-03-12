@@ -138,110 +138,409 @@ table {
 
 
 /* below */
-body{
+body {
     display: flex;
     flex-direction: column;
     font-family: "futura-pt", sans-serif;
     background-color: rgb(52, 53, 53);
-    color:aliceblue;
+    color: aliceblue;
+    
 }
-h1{
-    font-size: 24pt;
+
+menu #tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
+
+menu #tags h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
 #tags a {
-    text-decoration: none; /* 去除默认下划线 */
-    color: inherit; /* 继承父元素颜色 */
+    text-decoration: none;
+    /* 去除默认下划线 */
+    color: inherit;
+    /* 继承父元素颜色 */
+    position: relative;
+    padding-bottom: 5px;
 }
 
 #tags a:hover {
-    color: gray; /* 悬停时改变颜色 */
+    color: gray;
+    /* 悬停时改变颜色 */
 }
 
-menu{
-    width: calc(100% - 40px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(52, 53, 53);
-    /* color: rgb(52, 53, 53); */
-    position:fixed;
-    z-index: 10;
-    padding:20px;
-}
-
-menu #tags{
-    width:50%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.project{
-    margin: 1em;
-    position: relative;
-    top:5em;
-}
-.project img {
-    width: 100%; /* 确保图片自适应容器 */
-    display: block;
-    max-width: 600px;
-}
-.project .title{
+menu #tags h1 a.active::after {
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(100% - 40px);
-    padding: 20px;
-    margin:0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    height: 2px;
+    background-color: grey;
 }
 
-.project .title p {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project:hover .title p {
-    display: block;
-    opacity: 1;
+menu #tags h1 a.active {
+    pointer-events: none; /* 禁止点击 */
+    cursor: default;      /* 光标样式 */
+    color: gray;          /* 可选：改变颜色，表明当前不可点击 */
 }
 
 
-.title{
-    margin: 1em;
+/* 小型桌面 */
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 18px;
+    }
 }
+
+/* 平板 */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+/* 手机 */
+@media(max-width: 650px) {
+
+
+    h1 {
+        letter-spacing: 0.5px;
+        font-size: 20px;
+    }
+
+    p {
+        letter-spacing: 0.3px;
+        font-size: 14px;
+    }
+
+    menu {
+        width: calc(100vw - 100px);
+        height:60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(52, 53, 53);
+        position: fixed;
+        z-index: 10;
+    }
+
+    #projects {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        top: 60px;
+        margin: 0 20px;
+        background-color: aquamarine;
+    }
+
+    .project {
+        margin: 20px 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .project img {
+        width: 100%;
+        display: block;
+    }
+
+    .project .title {
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 40px);
+        padding: 20px;
+        margin: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        height: 20px;
+        /* 初始高度，仅容纳 h1 */
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+
+    .project .title p {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project:hover .title {
+        height: 50px;
+        /* 悬停时的高度，容纳 h1 和 p 标签 */
+    }
+
+    .project:hover .title p {
+        opacity: 1;
+    }
+
+    .title {
+        margin: 1em;
+    }
 
 
 
-/* 主体排版 */
-.intro-container {
-    display: flex;
-    align-items: center; /* 垂直居中 */
-    justify-content: center;
-    gap: 20px; /* 图片和文本之间的间距 */
-    position:relative;
-    top:5em;
+    /* 主体排版 */
+    .intro-container {
+        display: flex;
+        align-items: center;
+        /* 垂直居中 */
+        justify-content: center;
+        gap: 20px;
+        /* 图片和文本之间的间距 */
+        position: relative;
+        top: 5em;
+    }
+
+    /* 图片样式 */
+    .intro-container img {
+        width: 300px;
+        height: auto;
+        /* border-radius: 10px;  */
+    }
+
+    /* 文字部分 */
+    .intro-text {
+        width: 400px;
+    }
+
+    .intro-text h1 {
+        margin: 0;
+    }
+
+    .intro-text p {
+        margin-top: 10px;
+        line-height: 1.5;
+    }
+
 }
 
-/* 图片样式 */
-.intro-container img {
-    width: 300px;
-    height: auto;
-    /* border-radius: 10px;  */
+@media(min-width: 651px) {
+    menu {
+        width: calc(100% - 40px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(52, 53, 53);
+        /* color: rgb(52, 53, 53); */
+        position: fixed;
+        z-index: 10;
+        padding: 20px;
+    }
+
+
+    #projects {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        top: 60px;
+    }
+
+    .project {
+        margin: 1em;
+        position: relative;
+        width: 600;
+    }
+
+    .project img {
+        width: 600px;
+        /* 确保图片自适应容器 */
+        display: block;
+    }
+
+    .project .title {
+        position: absolute;
+        bottom: 0;
+        width: calc(600px - 40px);
+        padding: 20px;
+        margin: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        height: 30px;
+        /* 初始高度，仅容纳 h1 */
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+
+    .project .title p {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project:hover .title {
+        height: 70px;
+        /* 悬停时的高度，容纳 h1 和 p 标签 */
+    }
+
+    .project:hover .title p {
+        opacity: 1;
+    }
+
+    .title {
+        margin: 1em;
+    }
+
+
+
+    /* 主体排版 */
+    .intro-container {
+        display: flex;
+        align-items: center;
+        /* 垂直居中 */
+        justify-content: center;
+        gap: 20px;
+        /* 图片和文本之间的间距 */
+        position: relative;
+        top: 5em;
+    }
+
+    /* 图片样式 */
+    .intro-container img {
+        width: 300px;
+        height: auto;
+        /* border-radius: 10px;  */
+    }
+
+    /* 文字部分 */
+    .intro-text {
+        width: 400px;
+    }
+
+    .intro-text h1 {
+        margin: 0;
+    }
+
+    .intro-text p {
+        margin-top: 10px;
+        line-height: 1.5;
+    }
+
 }
 
-/* 文字部分 */
-.intro-text{
-    width:400px;
-}
-.intro-text h1 {
-    margin: 0;
-    font-size: 2em;
-}
 
-.intro-text p {
-    margin-top: 10px;
-    line-height: 1.5;
-}
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
