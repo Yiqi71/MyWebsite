@@ -142,17 +142,60 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "futura-pt", sans-serif;
+    background-color: rgb(52, 53, 53);
+    color:aliceblue;
 }
 h1{
     font-size: 24pt;
 }
+
 menu{
+    width: calc(80% - 40px);
     display: flex;
-    background-color: aliceblue;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(52, 53, 53);
+    /* color: rgb(52, 53, 53); */
+    position:fixed;
+    z-index: 10;
+    padding:20px;
 }
+
+
+
 .project{
     margin: 1em;
+    position: relative;
+    top:5em;
 }
+.project img {
+    width: 80%; /* 确保图片自适应容器 */
+    display: block;
+}
+.project .title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(80% - 40px);
+    padding: 20px;
+    margin:0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+}
+
+.project .title p {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project:hover .title p {
+    display: block;
+    opacity: 1;
+}
+
+
 .title{
     margin: 1em;
 }
