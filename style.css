@@ -147,6 +147,11 @@ body {
     
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 menu #tags {
     display: flex;
     justify-content: center;
@@ -161,10 +166,6 @@ menu #tags h1 {
 }
 
 #tags a {
-    text-decoration: none;
-    /* 去除默认下划线 */
-    color: inherit;
-    /* 继承父元素颜色 */
     position: relative;
     padding-bottom: 5px;
 }
