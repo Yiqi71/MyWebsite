@@ -6,12 +6,13 @@ const projects = {
         image: "ProjectPics/QC-webpage_1.jpg",
         detail: `
     <p>A website designed to visualize complex quantum concepts, making them accessible and interactive for a broader audience.</p>
-    <a href="https://github.com/Yiqi71/The-Quantum-Atlas" target="_blank">
-        GitHub - The Quantum Atlas
+ 
+    <a href="https://quantumatlas.vercel.app" target="_blank">
+        Link to The Quantum Atlas: https://quantumatlas.vercel.app (iterating... might be messy)
     </a>
 
-    <a href="https://quantumatlas.vercel.app/" target="_blank">
-        The Quantum Atlas Live Demo
+    <a href="https://github.com/Yiqi71/The-Quantum-Atlas" target="_blank">
+        Link to GitHub Repository: https://github.com/Yiqi71/The-Quantum-Atlas
     </a>
 `
 
@@ -23,31 +24,10 @@ const projects = {
         image: "ProjectPics/data-collector_1.png",
         detail: `
         <p>This is a chrome extension collecting users’ browsing activity, visualizing the data collected, and reminding users of the potential risk of data collection and privacy leak.</p>
-        <section id="inspiration">
-        <h2>Inspiration</h2>
-        <ul>
-            <li>Many companies and apps are collecting data from users.</li>
-            <li>I cannot stop them, but I want to know what kinds of my data are collected.</li>
-            <li>I want to remind people of the potential risk behind data collection, because data collection is difficult to see.</li>
-            <li>Why extension? - Chrome and many other browsers are definitely big companies collecting data from users. Extension can appear on any pages inside the browser and work as a reminder, so I think extension is a good medium for this project.</li>
-        </ul>
-    </section>
+ 
+        <p><a href="https://youtu.be/KSIITh_aVlo" target="_blank">Click to watch a video demo</a></p>
+        <p><a href="https://chromewebstore.google.com/detail/a-kind-data-collector/noaeedfgdikfefonldofohifakmjdfoi?hl=en-US&utm_source=ext_sidebar" target="_blank"> Link to Chrome Extension Store</a></p>
 
-    <section id="process">
-        <h2>Process</h2>
-        <ul>
-            <li>Fetching Chrome history API</li>
-            <li>Arranging the collected data into meaningful arrays</li>
-            <li>Data visualization</li>
-            <li>Add more interaction (the appearing blocks when users are on any tabs)</li>
-        </ul>
-    </section>
-
-    <section id="final-result">
-        <h2>Final Result</h2>
-        <p><a href="https://youtu.be/KSIITh_aVlo" target="_blank">Watch the video</a></p>
-        <p>I am still working on publishing my extension. It was rejected once because of the permissions I was asking for. The second submission is still pending review.</p>
-    </section>
         `
     },
     "whispers": {

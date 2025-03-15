@@ -318,6 +318,8 @@ menu #tags h1 a.active {
 
     .project img {
         width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover; /* 保持图片填充且不变形 */
         display: block;
     }
 
@@ -347,6 +349,8 @@ menu #tags h1 a.active {
 
     .project img {
         width: 600px;
+        aspect-ratio: 3 / 2;
+        object-fit: cover; /* 保持图片填充且不变形 */
         display: block;
     }
 
