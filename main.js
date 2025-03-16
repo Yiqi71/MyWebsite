@@ -1,10 +1,6 @@
 // main.js
 const screenWidth = window.innerWidth;
 
-window.addEventListener('resize', () => {
-    screenWidth = window.innerWidth;
-});
-
 if (screenWidth <= 1024) {
     document.addEventListener('DOMContentLoaded', () => {
         const projects = document.querySelectorAll('.project');
