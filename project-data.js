@@ -7,7 +7,11 @@ const projects = {
         image: "ProjectPics/QC-webpage_1.jpg",
         detail: `
         <div>
-            <p>A website designed to visualize complex quantum concepts, making them accessible and interactive for a broader audience.</p>
+            <p>
+                A website designed to visualize complex quantum concepts, making them accessible and interactive for a broader audience.
+                I was responsible for <strong>front-end development</strong>, coding and building the entire website using modern web technologies. 
+                My work included designing the user interface, ensuring responsive layouts, and integrating interactive features to enhance user engagement.
+            </p>
         </div> 
         <div>
             <a href="https://quantumatlas.vercel.app" target="_blank" class="underline">

@@ -92,6 +92,7 @@ video {
     vertical-align: baseline;
 }
 
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -145,7 +146,7 @@ a {
 }
 
 /* List styling */
-ul {
+/* ul {
     list-style-type: disc;
     padding-left: 20px;
 }
@@ -153,7 +154,7 @@ ul {
 ul li {
     margin: 10px 0;
     font-size: 16px;
-}
+} */
 
 a.underline {
     text-decoration: underline;
@@ -258,9 +259,9 @@ menu #tags h1 a.active {
     transition: opacity 0.3s ease;
 }
 
-.project:hover .title p {
+/* .project:hover .title p {
     opacity: 1;
-}
+} */
 
 .title {
     margin: 1em;
@@ -322,7 +323,7 @@ menu #tags h1 a.active {
 
     p {
         letter-spacing: 0.3px;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     menu section{
@@ -353,10 +354,9 @@ menu #tags h1 a.active {
         /* 初始高度，仅容纳 h1 */
     }
 
-    .project:hover .title {
+    /* .project:active .title {
         height: 45px;
-        /* 悬停时的高度，容纳 h1 和 p 标签 */
-    }
+    } */
 
     #project-detail img{
         width: 100%;
@@ -364,8 +364,6 @@ menu #tags h1 a.active {
         object-fit: cover; /* 保持图片填充且不变形 */
         display: block;
     }
-
-
 
 }
 
@@ -424,7 +422,7 @@ menu #tags h1 a.active {
     }
 
     p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .project .title {
