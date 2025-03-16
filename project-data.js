@@ -2,18 +2,22 @@ const projects = {
     "QC-webpage": {
         title: "The Quantum Atlas",
         description: "Science Visualization Website",
+        group: "Group Project",
         date: "2025 Spring",
         image: "ProjectPics/QC-webpage_1.jpg",
         detail: `
-    <p>A website designed to visualize complex quantum concepts, making them accessible and interactive for a broader audience.</p>
- 
-    <a href="https://quantumatlas.vercel.app" target="_blank">
-        Link to The Quantum Atlas: https://quantumatlas.vercel.app (iterating... might be messy)
-    </a>
+        <div>
+            <p>A website designed to visualize complex quantum concepts, making them accessible and interactive for a broader audience.</p>
+        </div> 
+        <div>
+            <a href="https://quantumatlas.vercel.app" target="_blank" class="underline">
+                <p>Click to visit The Quantum Atlas(iterating... might be messy)</p>
+            </a>
 
-    <a href="https://github.com/Yiqi71/The-Quantum-Atlas" target="_blank">
-        Link to GitHub Repository: https://github.com/Yiqi71/The-Quantum-Atlas
-    </a>
+            <a href="https://github.com/Yiqi71/The-Quantum-Atlas" target="_blank" class="underline">
+                <p>Link to GitHub Repository</p>
+            </a> 
+        </div>
 `
 
     },
@@ -23,11 +27,13 @@ const projects = {
         date: "2024 Fall",
         image: "ProjectPics/data-collector_1.png",
         detail: `
-        <p>This is a chrome extension collecting users’ browsing activity, visualizing the data collected, and reminding users of the potential risk of data collection and privacy leak.</p>
- 
-        <p><a href="https://youtu.be/KSIITh_aVlo" target="_blank">Click to watch a video demo</a></p>
-        <p><a href="https://chromewebstore.google.com/detail/a-kind-data-collector/noaeedfgdikfefonldofohifakmjdfoi?hl=en-US&utm_source=ext_sidebar" target="_blank"> Link to Chrome Extension Store</a></p>
-
+        <div>
+            <p>This is a chrome extension collecting users’ browsing activity, visualizing the data collected, and reminding users of the potential risk of data collection and privacy leak.</p>
+        </div>
+        <div>
+            <p><a href="https://youtu.be/KSIITh_aVlo" target="_blank" class="underline">Click to watch a video demo</a></p>
+            <p><a href="https://chromewebstore.google.com/detail/a-kind-data-collector/noaeedfgdikfefonldofohifakmjdfoi?hl=en-US&utm_source=ext_sidebar" target="_blank" class="underline"> Link to Chrome Extension Store</a></p>
+        </div>
         `
     },
     "whispers": {

@@ -14,6 +14,7 @@ if (project) {
         <div>
         <h1>${project.title}</h1>
         <p>${project.description}</p>
+        <p>${project.group}</p>
         <p>${project.date}</p>
         </div> `+
         project.detail  

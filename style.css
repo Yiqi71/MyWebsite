@@ -152,7 +152,11 @@ ul {
 
 ul li {
     margin: 10px 0;
-    font-size: 1em;
+    font-size: 16px;
+}
+
+a.underline {
+    text-decoration: underline;
 }
 
 body {
@@ -300,8 +304,13 @@ menu #tags h1 a.active {
 
 #project-detail{
     flex-direction: column;
+    align-items: center;
 }
 
+#project-detail div{
+    width: 100%;
+    margin: 10px 0;
+}
 
 
 /* 手机 */
@@ -349,6 +358,15 @@ menu #tags h1 a.active {
         /* 悬停时的高度，容纳 h1 和 p 标签 */
     }
 
+    #project-detail img{
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover; /* 保持图片填充且不变形 */
+        display: block;
+    }
+
+
+
 }
 
 @media(min-width: 651px) {
@@ -380,6 +398,12 @@ menu #tags h1 a.active {
         /* 悬停时的高度，容纳 h1 和 p 标签 */
     }
 
+    #project-detail img{
+        width: 600px;
+        aspect-ratio: 3 / 2;
+        object-fit: cover; /* 保持图片填充且不变形 */
+        display: block;
+    }
 }
 
 /* 小型桌面 */
