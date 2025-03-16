@@ -38,7 +38,9 @@ const projects = {
         detail: `
         <div>
             <p>
-                This is a chrome extension collecting users’ browsing activity, visualizing the data collected, and reminding users of the potential risk of data collection and privacy leak.
+                This is a chrome extension collecting users’ browsing activity, 
+                visualizing the data collected, 
+                and reminding users of the potential risk of data collection and privacy leak.
             </p>
         </div>
         <div>
@@ -65,6 +67,20 @@ const projects = {
         <div>
             <p>
                 An immersive VR experience where players uncover stories through whispers from the past.
+                I was responsible for <strong>building scene2 and scene3</strong>,
+                as well as designing the game and writing the story together with groupmate.
+            </p>
+        </div>
+        <div>
+            <p>
+                <a href="https://youtu.be/wxMXZUBRMKs " target="_blank" class="underline">
+                    Click to watch a video demo for scene1
+                </a>
+            </p>
+            <p>
+                <a href="https://youtu.be/lLL9qg-qKMk" target="_blank" class="underline"> 
+                    Click to watch a video demo for scene2 & 3
+                </a>
             </p>
         </div>
         `
@@ -82,6 +98,13 @@ const projects = {
                 encouraging both play and learning about physical balance.
             </p>
         </div>
+        <div>
+            <p>
+                <a href="https://youtu.be/lyCN-RdZHfM" target="_blank" class="underline">
+                    Click to watch a video demo
+                </a>
+            </p>
+        </div>
         `
     },
     "light-of-connection": {
@@ -94,6 +117,13 @@ const projects = {
         <div>
             <p>
                 A wearable device using Arduino, designed to light up in response to nearby devices, symbolizing human connections in digital spaces.
+            </p>
+        </div>
+        <div>
+            <p>
+                <a href="https://yiqi-5965.notion.site/Light-of-Connection-1113627c4a65809e8da3fd7d6d6290c1?pvs=4" target="_blank" class="underline">
+                    Click to see the documentation blog
+                </a>
             </p>
         </div>
         `
@@ -109,6 +139,13 @@ const projects = {
             <p>
                 An art installation featuring 3D-printed moons, 
                 exploring themes of commercialization and our relationship with celestial bodies.
+            </p>
+        </div>
+        <div>
+            <p>
+                <a href="https://yiqi-5965.notion.site/Moons-on-Sale-Documentation-1203627c4a6580888bcae553004f3eca?pvs=4" target="_blank" class="underline">
+                    Click to see the documentation blog
+                </a>
             </p>
         </div>
         `
@@ -131,6 +168,18 @@ const projects = {
                 uncovering how the player died in their last life.
             </p>
         </div>
+        <div>
+            <p>
+                <a href="https://yiqi-5965.notion.site/Week7-Oops-You-Died-12d3627c4a6580c7af8ec6c789e93879?pvs=4" target="_blank" class="underline">
+                    Click to see the documentation blog
+                </a>
+            </p>
+            <p>
+                <a href="https://www.youtube.com/watch?v=OniKUyagpIk" target="_blank" class="underline">
+                    Click to watch a video demo
+                </a>
+            </p>
+        </div>
         `
     },
     "life-of-a-drink": {
@@ -145,6 +194,13 @@ const projects = {
                 A 360-degree video experience exploring the journey of a drink, 
                 from shop to bin, 
                 offering a unique perspective of daily life.
+            </p>
+        </div>
+        <div>
+            <p>
+                <a href="https://youtu.be/jhMU2j0BJrs" target="_blank" class="underline">
+                    Click to enjoy this video
+                </a>
             </p>
         </div>
         `
@@ -163,6 +219,13 @@ const projects = {
                 merging digital creativity with playful musical interaction.
             </p>
         </div>
+        <div>
+            <p>
+                <a href="https://editor.p5js.org/yc5965/sketches/r68vhKlwR" target="_blank" class="underline">
+                    Click to see the sketch
+                </a>
+            </p>
+        </div>        
         `
     },
     "a-plate": {
@@ -178,6 +241,14 @@ const projects = {
                 examining its potential for shaping and its impact on environmental sustainability in everyday objects.
             </p>
         </div>
+        <div>
+            <p>
+                <a href="https://drive.google.com/file/d/1gKK_VqEOnf2WyZgmNuiI0_WYAIz8KnBW/view?usp=sharing" target="_blank" class="underline">
+                    Click to see the documentation
+                </a>
+            </p>
+        </div>  
+        
         `
     },
     "pAInter": {

@@ -412,12 +412,6 @@ menu #tags h1 a.active {
         height: 30px;
         /* 初始高度，仅容纳 h1 */
     }
-
-    .project:hover .title {
-        height: 70px;
-        /* 悬停时的高度，容纳 h1 和 p 标签 */
-    }
-
     #project-detail img {
         width: 600px;
         aspect-ratio: 3 / 2;
@@ -440,6 +434,11 @@ menu #tags h1 a.active {
         font-size: 18px;
     }
 
+    .project:hover .title {
+        height: 80px;
+        /* 悬停时的高度，容纳 h1 和 p 标签 */
+    }
+
     .project:hover .title p {
         opacity: 1;
     }
@@ -457,13 +456,6 @@ menu #tags h1 a.active {
 
     .project .title {
         width: calc(100% - 40px);
-        height: 20px;
-        /* 初始高度，仅容纳 h1 */
-    }
-
-    .project:hover .title {
-        height: 55px;
-        /* 悬停时的高度，容纳 h1 和 p 标签 */
     }
 }
 

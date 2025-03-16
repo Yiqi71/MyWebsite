@@ -24,9 +24,9 @@ if (screenWidth <= 1024) {
             const paragraphs = title.querySelectorAll('p');
 
             if (screenWidth <= 650) {
-                changeHeight(title, paragraphs, rect, centerY, topThreshold, bottomThreshold, index, projects.length, '50px', '15px');
+                changeHeight(title, paragraphs, rect, centerY, topThreshold, bottomThreshold, index, projects.length, '58px', '15px');
             } else {
-                changeHeight(title, paragraphs, rect, centerY, topThreshold, bottomThreshold, index, projects.length, '60px', '25px');
+                changeHeight(title, paragraphs, rect, centerY, topThreshold, bottomThreshold, index, projects.length, '68px', '25px');
             }
 
             // Check if project is in the center or near top/bottom edges with updated condition
