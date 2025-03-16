@@ -139,6 +139,9 @@ table {
 
 
 /* below */
+p{
+    line-height: 1.2;
+}
 
 a {
     text-decoration: none;
@@ -421,6 +424,9 @@ menu #tags h1 a.active {
         object-fit: cover;
         /* 保持图片填充且不变形 */
         display: block;
+    }
+    #project-detail{
+        width: 600px;
     }
 }
 
