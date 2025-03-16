@@ -313,12 +313,12 @@ menu #tags h1 a.active {
 
     p {
         letter-spacing: 0.3px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     menu section{
         width: calc(100% - 40px);
-        background-color: aqua;
+        /* background-color: aqua; */
     }
 
     menu section #tags {
