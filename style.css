@@ -160,6 +160,20 @@ a.underline {
     text-decoration: underline;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+/* 隐藏滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* 隐藏滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -371,8 +385,9 @@ menu #tags h1 a.active {
 }
 
 @media(min-width: 651px) {
-    menu {
+    menu section{
         width: calc(100% - 40px);
+        max-width: 1240px;
     }
 
     .project {
