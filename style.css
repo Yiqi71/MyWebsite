@@ -170,7 +170,7 @@ body {
 }
 
 menu {
-    height:60px;
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -180,8 +180,8 @@ menu {
     z-index: 10;
 }
 
-menu section{
-    height:60px;
+menu section {
+    height: 60px;
     width: calc(100% - 40px);
     display: flex;
     justify-content: space-between;
@@ -236,9 +236,12 @@ menu #tags h1 a.active::after {
 }
 
 menu #tags h1 a.active {
-    pointer-events: none; /* 禁止点击 */
-    cursor: default;      /* 光标样式 */
-    color: gray;          /* 可选：改变颜色，表明当前不可点击 */
+    pointer-events: none;
+    /* 禁止点击 */
+    cursor: default;
+    /* 光标样式 */
+    color: gray;
+    /* 可选：改变颜色，表明当前不可点击 */
 }
 
 
@@ -263,48 +266,45 @@ menu #tags h1 a.active {
     margin: 1em;
 }
 
-/* 主体排版 */
+/* About Me 排版 */
 .intro-container {
     display: flex;
     align-items: center;
-    /* 垂直居中 */
     justify-content: center;
     gap: 20px;
-    /* 图片和文本之间的间距 */
     position: relative;
     top: 5em;
 }
 
-/* 图片样式 */
 .intro-container img {
     width: 300px;
     height: auto;
     /* border-radius: 10px;  */
 }
 
-/* 文字部分 */
 .intro-text {
     width: 400px;
 }
 
 .intro-text h1 {
     margin: 0;
+    line-height: 1.5;
 }
 
 .intro-text p {
     margin-top: 10px;
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 
 
-
-#project-detail{
+/* project detail pages 排版 */
+#project-detail {
     flex-direction: column;
     align-items: center;
 }
 
-#project-detail div{
+#project-detail div {
     width: 100%;
     margin: 10px 0;
 }
@@ -322,7 +322,7 @@ menu #tags h1 a.active {
         font-size: 18px;
     }
 
-    menu section{
+    menu section {
         width: calc(100% - 40px);
         /* background-color: aqua; */
     }
@@ -340,7 +340,8 @@ menu #tags h1 a.active {
     .project img {
         width: 100%;
         aspect-ratio: 3 / 2;
-        object-fit: cover; /* 保持图片填充且不变形 */
+        object-fit: cover;
+        /* 保持图片填充且不变形 */
         display: block;
     }
 
@@ -354,13 +355,18 @@ menu #tags h1 a.active {
         height: 45px;
     } */
 
-    #project-detail img{
+    #project-detail img {
         width: 100%;
         aspect-ratio: 3 / 2;
-        object-fit: cover; /* 保持图片填充且不变形 */
+        object-fit: cover;
+        /* 保持图片填充且不变形 */
         display: block;
     }
 
+    .intro-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media(min-width: 651px) {
@@ -377,7 +383,8 @@ menu #tags h1 a.active {
     .project img {
         width: 600px;
         aspect-ratio: 3 / 2;
-        object-fit: cover; /* 保持图片填充且不变形 */
+        object-fit: cover;
+        /* 保持图片填充且不变形 */
         display: block;
     }
 
@@ -392,10 +399,11 @@ menu #tags h1 a.active {
         /* 悬停时的高度，容纳 h1 和 p 标签 */
     }
 
-    #project-detail img{
+    #project-detail img {
         width: 600px;
         aspect-ratio: 3 / 2;
-        object-fit: cover; /* 保持图片填充且不变形 */
+        object-fit: cover;
+        /* 保持图片填充且不变形 */
         display: block;
     }
 }
@@ -408,6 +416,10 @@ menu #tags h1 a.active {
 
     p {
         font-size: 18px;
+    }
+
+    .project:hover .title p {
+        opacity: 1;
     }
 }
 
@@ -437,107 +449,106 @@ menu #tags h1 a.active {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
-  }
-  
-  .poppins-extralight {
+}
+
+.poppins-extralight {
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     font-style: normal;
-  }
-  
-  .poppins-light {
+}
+
+.poppins-light {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
-  }
-  
-  .poppins-regular {
+}
+
+.poppins-regular {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
-  .poppins-medium {
+}
+
+.poppins-medium {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-  }
-  
-  .poppins-semibold {
+}
+
+.poppins-semibold {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
-  }
-  
-  .poppins-bold {
+}
+
+.poppins-bold {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
-  }
-  
-  .poppins-extrabold {
+}
+
+.poppins-extrabold {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
-  }
-  
-  .poppins-black {
+}
+
+.poppins-black {
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-style: normal;
-  }
-  
-  .poppins-thin-italic {
+}
+
+.poppins-thin-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: italic;
-  }
-  
-  .poppins-extralight-italic {
+}
+
+.poppins-extralight-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     font-style: italic;
-  }
-  
-  .poppins-light-italic {
+}
+
+.poppins-light-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: italic;
-  }
-  
-  .poppins-regular-italic {
+}
+
+.poppins-regular-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: italic;
-  }
-  
-  .poppins-medium-italic {
+}
+
+.poppins-medium-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: italic;
-  }
-  
-  .poppins-semibold-italic {
+}
+
+.poppins-semibold-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: italic;
-  }
-  
-  .poppins-bold-italic {
+}
+
+.poppins-bold-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: italic;
-  }
-  
-  .poppins-extrabold-italic {
+}
+
+.poppins-extrabold-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: italic;
-  }
-  
-  .poppins-black-italic {
+}
+
+.poppins-black-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-style: italic;
-  }
-  
+}
