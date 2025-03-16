@@ -166,6 +166,17 @@ body {
 
 menu {
     height:60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(52, 53, 53);
+    position: fixed;
+    z-index: 10;
+}
+
+menu section{
+    height:60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,14 +196,14 @@ main {
     /* background-color: aquamarine; */
 }
 
-menu #tags {
+menu section #tags {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
 }
 
-menu #tags h1 {
+menu section #tags h1 {
     margin: 0;
     padding: 0;
     text-align: center;
@@ -304,9 +315,11 @@ menu #tags h1 a.active {
         font-size: 14px;
     }
 
-    menu {
-        width: calc(100vw - 60px);
+    menu section{
+        width: calc(100vw-60px);
+        background-color: aqua;
     }
+
     menu #tags {
         gap: 25px;
     }
