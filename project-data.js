@@ -28,6 +28,7 @@ const projects = {
     "data-collector": {
         title: "A Kind Data Collector",
         description: "Chrome Extension",
+        group: "Individual Project",
         date: "2024 Fall",
         image: "ProjectPics/data-collector_1.png",
         detail: `
@@ -43,6 +44,7 @@ const projects = {
     "whispers": {
         title: "Whispers of the Past",
         description: "VR Game",
+        group: "Group Project",
         date: "2024 Spring",
         image: "ProjectPics/whispers_1.png",
         detail: "An immersive VR experience where players explore ancient ruins and uncover stories through whispers from the past."
@@ -50,6 +52,7 @@ const projects = {
     "ballance": {
         title: "Ballance",
         description: "Arduino Interactive Toy",
+        group: "Group Project",
         date: "2024 Fall",
         image: "ProjectPics/ballance_1.png",
         detail: "An Arduino-powered interactive toy that challenges players to balance elements, encouraging both play and learning about physical balance."
@@ -57,6 +60,7 @@ const projects = {
     "light-of-connection": {
         title: "Light of Connection",
         description: "Arduino Interactive Wearable",
+        group: "Group Project",
         date: "2024 Fall",
         image: "ProjectPics/light-of-connection_1.png",
         detail: "A wearable device using Arduino, designed to light up in response to nearby devices, symbolizing human connections in digital spaces."
@@ -64,6 +68,7 @@ const projects = {
     "moons-on-sale": {
         title: "Moons on Sale",
         description: "3D Printing Installation",
+        group: "Individual Project",
         date: "2024 Fall",
         image: "ProjectPics/moons-on-sale_1.jpg",
         detail: "An art installation featuring 3D-printed moons, exploring themes of commercialization and our relationship with celestial bodies."
