@@ -259,10 +259,6 @@ menu #tags h1 a.active {
     transition: opacity 0.3s ease;
 }
 
-/* .project:hover .title p {
-    opacity: 1;
-} */
-
 .title {
     margin: 1em;
 }
