@@ -177,6 +177,7 @@ menu {
 
 menu section{
     height:60px;
+    width: calc(100% - 40px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -316,13 +317,14 @@ menu #tags h1 a.active {
     }
 
     menu section{
-        width: calc(100vw-60px);
+        width: calc(100% - 40px);
         background-color: aqua;
     }
 
-    menu #tags {
-        gap: 25px;
+    menu section #tags {
+        gap: 20px;
     }
+
     .project {
         margin: 20px 0;
         position: relative;
