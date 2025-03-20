@@ -27,7 +27,31 @@ const projects = {
             </a> 
         </div>
 `
-
+    },
+    "GBG-car": {
+        title: "GoBabyGo Car Frame Redesign",
+        description: "UX Design and Assistive Technology",
+        group: "Group Project",
+        date: "2025 Spring",
+        image: "ProjectPics/GBG_1.jpg",
+        detail: `
+        <div>
+            <p>
+                A redesign of the GoBabyGo car frame to 
+                improve accessibility and usability for children with mobility challenges. 
+                I contributed to <strong>market research, prototyping, and iterative design</strong>, 
+                ensuring the modifications met the specific needs of the users. 
+                The project involved testing ergonomic adjustments, 
+                refining balance and supports, 
+                and incorporating adaptable features to accommodate different mobility requirements.
+            </p>
+        </div> 
+        <div>
+            <a href="https://www.canva.com/design/DAGh6o64rZE/IxALyKTI5eiIh-EFfzHNkg/edit?utm_content=DAGh6o64rZE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="underline">
+                <p>Click to see a slide presentation</p>
+            </a>
+        </div>
+`
     },
     "data-collector": {
         title: "A Kind Data Collector",
