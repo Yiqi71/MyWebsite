@@ -28,6 +28,36 @@ const projects = {
         </div>
 `
     },
+    "Kiwi": {
+        title: "Kiwi's Picture Advice",
+        description: "Website Design",
+        group: "Individual Project",
+        date: "2025 Spring",
+        image: "ProjectPics/kiwi_1.png",
+        detail: `
+        <div>
+            <p>
+            This website is designed to give users advice on which picture is "better." <br>
+            Inspired by the reading <i>The Defecating Duck</i>, I originally started this project as a machine learning experiment. 
+            My goal was for Kiwi—the system I created—to replicate my personal bias when judging images. 
+            I went through the full process: assembling a dataset of images with corresponding scores, feeding them into a program, and training a model.  <br><br>
+            Although the model technically worked, the results were far from accurate. 
+            That failure led me to a new direction: what if the outcomes were completely random, yet presented with confidence—as if they were the result of complex computation?  <br><br>
+            This idea evolved into Kiwi, a mysterious character who dispenses picture-judging wisdom. The randomness is intentional, but users may still try to find meaning in Kiwi’s decisions.  <br><br>
+            The project draws direct inspiration from the story in <i>The Defecating Duck</i>, where someone claimed to have built a machine that could play chess, but in reality, a human hidden underneath controlled the moves. Like that illusion, Kiwi gives off an air of intelligence, while the real mechanism is either flawed machine learning—or pure chance.
+            </p>
+        </div> 
+        <div>
+            <a href="https://htmlpreview.github.io/?https://github.com/Yiqi71/Yiqi-s-Pics-Bias/blob/9d3a25ed78ada978cd1796e9f41b94d379a0cf7f/Kiwi%27s%20Pic%20Bias/index.html" target="_blank" class="underline">
+                <p>Click to visit Kiwi's site</p>
+            </a>
+
+            <a href="https://github.com/Yiqi71/Yiqi-s-Pics-Bias" target="_blank" class="underline">
+                <p>Link to GitHub Repository</p>
+            </a> 
+        </div>
+`
+    },
     "GBG-car": {
         title: "GoBabyGo Car Frame Redesign",
         description: "UX Design and Assistive Technology",
@@ -257,7 +287,7 @@ const projects = {
         "description": "Plastic Material Exploration",
         "group": "Individual Project",
         "date": "2024 Spring",
-        "image": "ProjectPics/plate_1.png",
+        "image": "ProjectPics/aplate_1.jpg",
         "detail": `
         <div>
             <p>
