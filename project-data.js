@@ -1,4 +1,68 @@
 const projects = {
+    "bk-trees":{
+        title: "TreeFriend",
+        description: "Interactive Website based on reality",
+        group: "Individual Project",
+        date: "2025 Spring",
+        image: "ProjectPics/bk-trees_1.png",
+        detail: `
+        <div>
+            <p>
+                A website where people can chat with trees in Brooklyn and build connections.
+
+### Book responding to: Why Look at Animals
+
+Animals are often pushed to the margins and silenced in human narratives.
+</p> 
+<p> “What we know about them is an index of our power, and thus an index of what separate us from them. The more we know, the further away they are.” (p16)
+</p> 
+<p>
+This quote reflects a troubling perspective: when humans "study" animals, they are often positioned as subjects below us — observed, classified, and controlled. But animals, like humans, are co-inhabitants of the Earth. So are plants.
+
+Urban trees are in a similar situation. They are frequently reduced to their utility — seen as decorative elements or natural air purifiers. Rarely are they recognized as living beings with presence, resilience, or story.
+
+**TreeFriend** challenges this viewpoint. It invites people to see trees not as background objects, but as neighbors — each with a unique personality, a memory, and a voice worth listening to.
+            </p>
+        </div> 
+        <div>
+            <a href="//www.instagram.com/reel/DJFUL8jRJlF/?igsh=MWtiZGZ3ZjB0cWY1MA==" target="_blank" class="underline">
+                <p>Click to see a video demo</p>
+            </a>
+
+<a href="https://trees-manhattan.vercel.app" target="_blank" class="underline">
+                <p>Click to visit TreeFriend</p>
+            </a>
+            <a href="https://github.com/Yiqi71/Trees---Manhattan" target="_blank" class="underline">
+                <p>Link to GitHub Repository</p>
+            </a> 
+        </div>
+`
+    },
+    "hi": {
+        title: "Hi~",
+        description: "Interactive 3D Charactor on Website",
+        group: "Individual Project",
+        date: "2025 Spring",
+        image: "ProjectPics/hi_1.png",
+        detail: `
+        <div>
+            <p>
+                A animated charactor based on three.js finished in 24h. 
+                Subtle movement and interactions make this charactor looks alive. 
+                Responsive to screens of different sizes.
+            </p>
+        </div> 
+        <div>
+            <a href="https://hunban.vercel.app" target="_blank" class="underline">
+                <p>Click to visit it~</p>
+            </a>
+
+            <a href="https://github.com/Yiqi71/Hunban" target="_blank" class="underline">
+                <p>Link to GitHub Repository</p>
+            </a> 
+        </div>
+`
+    },
     "QC-webpage": {
         title: "The Quantum Atlas",
         description: "Science Visualization Website",
