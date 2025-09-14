@@ -40,7 +40,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "futura-pt", sans-serif;
-    background-color: rgb(52, 53, 53);
+    background-color: rgb(34, 35, 35);
     color: #f0f8ff;
     align-items: center;
 }
@@ -51,7 +51,7 @@ menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(52, 53, 53);
+    background-color: rgb(34, 35, 35);
     position: fixed;
     z-index: 10;
 }
@@ -62,7 +62,7 @@ menu section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(52, 53, 53);
+    background-color: rgb(34, 35, 35);
     position: fixed;
     z-index: 10;
 }
