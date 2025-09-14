@@ -88,20 +88,22 @@ menu section #tags {
 menu section #tags h1 {
     margin: 0;
     padding: 0;
+    padding-bottom: 5px;
     text-align: center;
+    position:relative;
 }
 
-#tags a {
+/* #tags h1 {
     position: relative;
     padding-bottom: 5px;
-}
+} */
 
-#tags a:hover {
+#tags h1:hover {
     color: gray;
     /* 悬停时改变颜色 */
 }
 
-menu #tags h1 a.active::after {
+#tags h1.selected::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -111,12 +113,12 @@ menu #tags h1 a.active::after {
     background-color: grey;
 }
 
-menu #tags h1 a.active {
+#tags h1.selected {
     pointer-events: none;
     /* 禁止点击 */
     cursor: default;
     /* 光标样式 */
-    color: gray;
+    color: gray !important;
     /* 可选：改变颜色，表明当前不可点击 */
 }
 
@@ -146,6 +148,7 @@ menu #tags h1 a.active {
 .intro-container {
     width: calc(100% - 60px);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -160,7 +163,8 @@ menu #tags h1 a.active {
 }
 
 .intro-text {
-    width: 300px;
+    width: calc(100% - 400px);
+    min-width: 300px;
 }
 
 .intro-text h1 {
@@ -179,6 +183,8 @@ menu #tags h1 a.active {
 #project-detail {
     flex-direction: column;
     align-items: center;
+
+    padding: 30px;
 }
 
 #project-detail div {
