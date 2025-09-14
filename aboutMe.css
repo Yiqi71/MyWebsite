@@ -1,0 +1,32 @@
+/* About Me 排版 */
+.intro-container {
+    width: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 5em;
+}
+
+.intro-container img {
+    width: 300px;
+    height: auto;
+    /* border-radius: 10px;  */
+}
+
+.intro-text {
+    width: calc(100% - 400px);
+    min-width: 300px;
+}
+
+.intro-text h1 {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.intro-text p {
+    margin-top: 10px;
+    line-height: 1.2;
+}
