@@ -1,0 +1,67 @@
+footer {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(18, 18, 18); /* 跟你的 body 保持一致 */
+  color: #f0f8ff;
+  padding: 20px;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.footer-top .left {
+  flex: 1; /* 左边空 */
+}
+
+.footer-top .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+}
+
+.footer-links a:hover {
+  color: gray;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-bottom h1 {
+  font-size: 180px;
+  letter-spacing: 10px;
+  margin: 0;
+}
