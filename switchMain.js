@@ -242,7 +242,18 @@ function renderOtherWorks(){
                 </div>
             </div>
         </a>
-`,
+`,`
+        <a href="project-detail.html?id=popcorn-rain">
+            <div id="popcorn-rain" class="project">
+                <img alt="popcorn-rain img" src="ProjectPics/popcorn-rain_1.png" width=400>
+                <div class="title">
+                    <h1>Popcorn Rain</h1>
+                    <p>p5.js Creative Computing</p>
+                    <p>2024 Spring</p>
+                </div>
+            </div>
+        </a>
+        `,
     `
         <a href="project-detail.html?id=moons-on-sale">
             <div id="moons-on-sale" class="project">
@@ -267,18 +278,7 @@ function renderOtherWorks(){
             </div>
         </a>
         `,
-    `
-        <a href="project-detail.html?id=popcorn-rain">
-            <div id="popcorn-rain" class="project">
-                <img alt="popcorn-rain img" src="ProjectPics/popcorn-rain_1.png" width=400>
-                <div class="title">
-                    <h1>Popcorn Rain</h1>
-                    <p>p5.js Creative Computing</p>
-                    <p>2024 Spring</p>
-                </div>
-            </div>
-        </a>
-        `,
+    
     `
         <a href="project-detail.html?id=a-plate">
             <div id="a-plate" class="project">
