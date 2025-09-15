@@ -22,7 +22,7 @@ fetch("projects.json")
         </div>
       ` + project.detail;
     } else {
-      document.getElementById('project-detail').innerHTML = "<p>项目未找到。</p>";
+      document.getElementById('project-detail').innerHTML = "<p>Coming soon...</p>";
     }
   })
   .catch(error => {

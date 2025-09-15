@@ -96,6 +96,15 @@
     "detail": "<div>\n<p>A wearable device using Arduino, designed to light up in response to nearby devices, symbolizing human connections in digital spaces.</p>\n</div>\n<div>\n<p><a href=\"https://yiqi-5965.notion.site/Light-of-Connection-1113627c4a65809e8da3fd7d6d6290c1?pvs=4\" target=\"_blank\" class=\"underline\">Click to see the documentation blog</a></p>\n</div>"
   },
   {
+    "id":"moons-on-sale",
+    "title": "Moons on Sale",
+    "description": "3D Printing Installation",
+    "group": "Individual Project",
+    "date": "2024 Fall",
+    "image": "ProjectPics/moons-on-sale_1.jpg",
+    "detail": "<div>\n<p>An art installation featuring 3D-printed moons, exploring themes of commercialization and our relationship with celestial bodies.</p>\n</div>\n<div>\n<p><a href=\"https://yiqi-5965.notion.site/Moons-on-Sale-Documentation-1203627c4a6580888bcae553004f3eca?pvs=4\" target=\"_blank\" class=\"underline\">Click to see the documentation blog</a></p>\n</div>"
+  },
+  {
     "id": "oops",
     "title": "Oops, You Died.",
     "description": "Arduino Interactive Installation",
