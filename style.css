@@ -36,7 +36,7 @@ body {
 
 menu {
     height: 60px;
-    width: 100%;
+    width: calc(100% - 120px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,7 @@ menu {
 
 menu section {
     height: 60px;
-    width: calc(100% - 40px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,19 +107,45 @@ main {
     /* background-color: aquamarine; */
 }
 
-main.columns{
+main.four-columns{
     display: flex;
-    gap: 50px;
-    width: calc(100% - 200px);
+    gap: 30px;
+    width: calc(100% - 100px);
     margin: auto;
+    height: calc(100vh - 140px);
+    overflow-x: auto;
 }
 
-.column {
+.four-columns .column {
     flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    width: calc(100% - 5px);
+    height: 100%;
+    padding-right: 10px;
+}
+
+.four-columns .column-title {
+    font-size: 24px;
+    /* font-weight: 600; */
+    margin: 0 0 20px 0;
+    padding: 10px 0;
+    border-bottom: 2px solid #333;
+    color: #ccc;
+    position: sticky;
+    top: 0;
+    background-color: rgb(18, 18, 18);
+    z-index: 1;
+    text-align: center;
+}
+
+.four-columns .column-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+    flex: 1;
+    padding-bottom: 20px;
 }
 
 
@@ -134,6 +160,9 @@ main.columns{
     flex-direction: column;
     overflow: hidden;
     transition: height 0.3s ease;
+
+    white-space: nowrap;
+
 }
 
 .project .title p {
@@ -211,8 +240,7 @@ main.columns{
 
 @media(min-width: 651px) {
     menu section{
-        width: calc(100% - 40px);
-        max-width: 1240px;
+        width: calc(100% - 120px);
     }
 
     .project {
@@ -386,4 +414,106 @@ main.columns{
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-style: italic;
+}
+
+/* Empty projects page styling */
+.empty-projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+    text-align: center;
+}
+
+.empty-projects h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.empty-projects p {
+    font-size: 24px;
+    color: #888;
+}
+
+/* Responsive adjustments for 4-column layout */
+@media(max-width: 1200px) {
+    main.four-columns {
+        gap: 20px;
+        width: calc(100% - 60px);
+    }
+    
+    .four-columns .column {
+        min-width: 250px;
+    }
+    
+    .four-columns .column-title {
+        font-size: 20px;
+    }
+    
+    .four-columns .column-content {
+        gap: 25px;
+    }
+}
+
+@media(max-width: 900px) {
+    main.four-columns {
+        gap: 15px;
+        width: calc(100% - 40px);
+    }
+    
+    .four-columns .column {
+        min-width: 200px;
+    }
+    
+    .four-columns .column-title {
+        font-size: 18px;
+    }
+    
+    .four-columns .column-content {
+        gap: 20px;
+    }
+    
+    .empty-projects h1 {
+        font-size: 36px;
+    }
+    
+    .empty-projects p {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 650px) {
+    main.four-columns {
+        flex-direction: column;
+        height: auto;
+        gap: 40px;
+    }
+    
+    .four-columns .column {
+        min-width: auto;
+        height: auto;
+    }
+    
+    .four-columns .column-title {
+        font-size: 22px;
+        text-align: center;
+        position: static;
+        background-color: transparent;
+    }
+    
+    .four-columns .column-content {
+        gap: 30px;
+        overflow-y: visible;
+        flex: none;
+    }
+    
+    .empty-projects h1 {
+        font-size: 32px;
+    }
+    
+    .empty-projects p {
+        font-size: 18px;
+    }
 }
