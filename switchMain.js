@@ -110,6 +110,36 @@ function renderOtherWorks() {
                         </div>
                     </div>
                 </a>
+                <a href="project-detail.html?id=hi">
+                    <div id="hi" class="project">
+                        <img alt="hi" src="ProjectPics/hi_1.png" width=400>
+                        <div class="title">
+                            <h1>hi~</h1>
+                            <p>Front-end Development</p>
+                            <p>2025 Spring</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="project-detail.html?id=Kiwi">
+                    <div id="kiwi" class="project">
+                        <img alt="kiwi img" src="ProjectPics/kiwi_1.png" width=400>
+                        <div class="title">
+                            <h1>Kiwi's Picture Advice</h1>
+                            <p>Front-end Development</p>
+                            <p>2025 Spring</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="project-detail.html?id=popcorn-rain">
+                    <div id="popcorn-rain" class="project">
+                        <img alt="popcorn-rain img" src="ProjectPics/popcorn-rain_1.png" width=400>
+                        <div class="title">
+                            <h1>Popcorn Rain</h1>
+                            <p>p5.js Creative Computing</p>
+                            <p>2024 Spring</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
         
@@ -152,62 +182,6 @@ function renderOtherWorks() {
                         </div>
                     </div>
                 </a>
-            </div>
-        </div>
-        
-        <div class="column other-column">
-            <h2 class="column-title">Other</h2>
-            <div class="column-content">
-                <a href="project-detail.html?id=hi">
-                    <div id="hi" class="project">
-                        <img alt="hi" src="ProjectPics/hi_1.png" width=400>
-                        <div class="title">
-                            <h1>hi~</h1>
-                            <p>Front-end Development</p>
-                            <p>2025 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=life-of-a-drink">
-                    <div id="life-of-a-drink" class="project">
-                        <img alt="life-of-a-drink img" src="ProjectPics/life_1.png" width=400>
-                        <div class="title">
-                            <h1>Life of a Drink</h1>
-                            <p>360 Video</p>
-                            <p>2024 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=Kiwi">
-                    <div id="kiwi" class="project">
-                        <img alt="kiwi img" src="ProjectPics/kiwi_1.png" width=400>
-                        <div class="title">
-                            <h1>Kiwi's Picture Advice</h1>
-                            <p>Front-end Development</p>
-                            <p>2025 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=popcorn-rain">
-                    <div id="popcorn-rain" class="project">
-                        <img alt="popcorn-rain img" src="ProjectPics/popcorn-rain_1.png" width=400>
-                        <div class="title">
-                            <h1>Popcorn Rain</h1>
-                            <p>p5.js Creative Computing</p>
-                            <p>2024 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=moons-on-sale">
-                    <div id="moons-on-sale" class="project">
-                        <img alt="moons-on-sale img" src="ProjectPics/moons-on-sale_1.jpg" width=400>
-                        <div class="title">
-                            <h1>Moons on Sale</h1>
-                            <p>3D Printing Installation</p>
-                            <p>2024 Fall</p>
-                        </div>
-                    </div>
-                </a>
                 <a href="project-detail.html?id=oops">
                     <div id="oops" class="project">
                         <img alt="oops img" src="ProjectPics/oops_1.png" width=400>
@@ -218,6 +192,36 @@ function renderOtherWorks() {
                         </div>
                     </div>
                 </a>
+            </div>
+        </div>
+        
+        <div class="column other-column">
+            <h2 class="column-title">Other</h2>
+            <div class="column-content">
+                
+                <a href="project-detail.html?id=life-of-a-drink">
+                    <div id="life-of-a-drink" class="project">
+                        <img alt="life-of-a-drink img" src="ProjectPics/life_1.png" width=400>
+                        <div class="title">
+                            <h1>Life of a Drink</h1>
+                            <p>360 Video</p>
+                            <p>2024 Spring</p>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="project-detail.html?id=moons-on-sale">
+                    <div id="moons-on-sale" class="project">
+                        <img alt="moons-on-sale img" src="ProjectPics/moons-on-sale_1.jpg" width=400>
+                        <div class="title">
+                            <h1>Moons on Sale</h1>
+                            <p>3D Printing Installation</p>
+                            <p>2024 Fall</p>
+                        </div>
+                    </div>
+                </a>
+                
                 <a href="project-detail.html?id=a-plate">
                     <div id="a-plate" class="project">
                         <img alt="a-plate img" src="ProjectPics/aplate_1.jpg" width=400>
