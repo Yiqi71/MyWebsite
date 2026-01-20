@@ -4,40 +4,36 @@ const projectsBut = document.getElementById("projects");
 const otherWorksBut = document.getElementById("other-works");
 const aboutBut = document.getElementById("about");
 
-// Event listeners for the three main sections
-projectsBut.addEventListener("click", (e) => {
-    renderProjects();
-    removeAllActive();
-    projectsBut.classList="selected";
-    main.classList = "";
-})
+function renderByHash() {
+    const section = window.location.hash.replace("#", "");
+    if (!section) {
+        window.location.hash = "projects";
+        return;
+    }
+    setActiveSection(section);
+}
 
-otherWorksBut.addEventListener("click", (e) => {
+function setActiveSection(section) {
+    removeAllActive();
+    if (section === "projects") {
+        renderProjects();
+        projectsBut.classList = "selected";
+        main.classList = "";
+        return;
+    }
+    if (section === "about") {
+        renderAbout();
+        aboutBut.classList = "selected";
+        main.classList = "";
+        return;
+    }
     renderOtherWorks();
-    removeAllActive();
-    otherWorksBut.classList="selected";
+    otherWorksBut.classList = "selected";
     main.classList = "four-columns";
-})
+}
 
-aboutBut.addEventListener("click", (e) => {
-    renderAbout();
-    removeAllActive();
-    aboutBut.classList="selected";
-    main.classList = "";
-})
-
-const aboutLink = document.getElementById("about-link");
-aboutLink.addEventListener("click", (e) => {
-    renderAbout();
-    removeAllActive();
-    aboutBut.classList="selected";
-    main.classList = "";
-})
-
-// Initialize with Other Works page
-otherWorksBut.classList="selected";
-main.classList = "four-columns";
-renderOtherWorks();
+window.addEventListener("hashchange", renderByHash);
+renderByHash();
 
 function removeAllActive(){
     projectsBut.classList='';
@@ -46,11 +42,29 @@ function removeAllActive(){
 }
 
 function renderProjects() {
-    // Empty projects page for now
     main.innerHTML = `
-        <div class="empty-projects">
-            <h1>Projects</h1>
-            <p>Coming soon...</p>
+        <div class="projects-gallery">
+            <img alt="portfolio 6" src="PortfolioPics/7.png">
+            <img alt="portfolio 1-1" src="PortfolioPics/1-1.png">
+            <img alt="portfolio 1-2" src="PortfolioPics/1-2.png">
+            <img alt="portfolio 1-3" src="PortfolioPics/1-3.png">
+            <img alt="portfolio 1-4" src="PortfolioPics/1-4.png">
+            <img alt="portfolio 1-5" src="PortfolioPics/1-5.png">
+            <img alt="portfolio 1-6" src="PortfolioPics/1-6.png">
+            <img alt="portfolio 2-1" src="PortfolioPics/2-1.png">
+            <img alt="portfolio 2-2" src="PortfolioPics/2-2.png">
+            <img alt="portfolio 2-3" src="PortfolioPics/2-3.png">
+            <img alt="portfolio 2-4" src="PortfolioPics/2-4.png">
+            <img alt="portfolio 2-5" src="PortfolioPics/2-5.png">
+            <img alt="portfolio 2-6" src="PortfolioPics/2-6.png">
+            <img alt="portfolio 3-1" src="PortfolioPics/3-1.png">
+            <img alt="portfolio 3-2" src="PortfolioPics/3-2.png">
+            <img alt="portfolio 3-3" src="PortfolioPics/3-3.png">
+            <img alt="portfolio 3-4" src="PortfolioPics/3-4.png">
+            <img alt="portfolio 3-5" src="PortfolioPics/3-5.png">
+            <img alt="portfolio 4-1" src="PortfolioPics/4-1.png">
+            <img alt="portfolio 5-1" src="PortfolioPics/5-1.png">
+            <img alt="portfolio 5-2" src="PortfolioPics/5-2.png">
         </div>
     `;
 }
@@ -263,13 +277,10 @@ function renderAbout(){
             <img alt="" src="" width="400">
             <div class="intro-text">
                 <h1>Hi, I'm Yiqi Chen, a Senior in Interactive Media Arts (IMA) at NYU.</h1>
-                <p>I'm passionate about blending creativity with technology, 
-                    and I've had the opportunity to explore various fields such as UI/UX design, 
-                    front-end development, creative coding, and physical computing.
-                    My experiences have allowed me to work on diverse projects where I design, 
-                    develop, and bring interactive ideas to life. 
-                    I thrive on solving problems in innovative ways and am always excited to
-                    learn new technologies and techniques.
+                <p>I am a designer working on systems where participation is risky, uneven, or incomplete.
+My work examines how responsibility is assigned when people hesitate, stay silent, or express themselves imperfectly. 
+Instead of asking individuals to perform better, 
+I design structures that help institutions interpret signals and act responsibly.
                 </p>
                 <p> Feel free to explore my work and get in touch!</p>
             </div>

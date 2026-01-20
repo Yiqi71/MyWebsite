@@ -4,7 +4,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgb(18, 18, 18); /* 跟你的 body 保持一致 */
+  background-color: #1A1A1A; /* 跟你的 body 保持一致 */
   color: #f0f8ff;
   padding: 20px;
   padding-top: 240px;
