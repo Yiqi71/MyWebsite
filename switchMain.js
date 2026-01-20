@@ -1,4 +1,5 @@
 const main = document.querySelector("main");
+const pageBody = document.body;
 
 const projectsBut = document.getElementById("projects");
 const otherWorksBut = document.getElementById("other-works");
@@ -19,17 +20,23 @@ function setActiveSection(section) {
         renderProjects();
         projectsBut.classList = "selected";
         main.classList = "";
+        pageBody.classList.remove("other-works");
+        scrollToTop();
         return;
     }
     if (section === "about") {
         renderAbout();
         aboutBut.classList = "selected";
         main.classList = "";
+        pageBody.classList.remove("other-works");
+        scrollToTop();
         return;
     }
     renderOtherWorks();
     otherWorksBut.classList = "selected";
     main.classList = "four-columns";
+    pageBody.classList.add("other-works");
+    scrollToTop();
 }
 
 window.addEventListener("hashchange", renderByHash);
@@ -65,6 +72,7 @@ function renderProjects() {
             <img alt="portfolio 4-1" src="PortfolioPics/4-1.png">
             <img alt="portfolio 5-1" src="PortfolioPics/5-1.png">
             <img alt="portfolio 5-2" src="PortfolioPics/5-2.png">
+            <a class="underline portfolio-link" href="https://github.com/Yiqi71/dune_dictionary" target="_blank" rel="noopener noreferrer">Dunes Dictionary Github Link</a>
         </div>
     `;
 }
@@ -74,16 +82,6 @@ function renderOtherWorks() {
         <div class="column digital-column">
             <h2 class="column-title">Digital</h2>
             <div class="column-content">
-                <a href="project-detail.html?id=dunes-dictionary">
-                    <div id="dunes-dictionary" class="project">
-                        <img alt="dunes-dictionary img" src="ProjectPics/dunes-dictionary_1.png" width=400>
-                        <div class="title">
-                            <h1>Dunes Dictionary - upcoming</h1>
-                            <p>Web Design & Front-end Development</p>
-                            <p>2025 Summer</p>
-                        </div>
-                    </div>
-                </a>
                 <a href="project-detail.html?id=bk-trees">
                     <div id="bk-trees" class="project">
                         <img alt="bk-trees img" src="ProjectPics/bk-trees_1.png" width=400>
@@ -286,4 +284,8 @@ I design structures that help institutions interpret signals and act responsibly
             </div>
         </div>
     `
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 }

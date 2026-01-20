@@ -1,5 +1,5 @@
 p{
-    line-height: 2;
+    line-height: 1.4;
     letter-spacing: 0.3px;
 }
 
@@ -35,6 +35,14 @@ body {
     align-items: center;
 }
 
+body.other-works {
+    overflow: hidden;
+}
+
+body.other-works footer {
+    display: none;
+}
+
 h1,
 h2,
 h3,
@@ -42,6 +50,7 @@ h3,
 .footer-title {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 600;
+    line-height: 1.2;
 }
 
 menu {
@@ -135,6 +144,13 @@ main {
     object-fit: contain;
 }
 
+.projects-gallery .portfolio-link {
+    display: block;
+    line-height: 1.4;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
 main.four-columns{
     display: flex;
     gap: 30px;
@@ -142,6 +158,7 @@ main.four-columns{
     margin: auto;
     height: calc(100vh - 140px);
     overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .four-columns .column {
@@ -527,6 +544,14 @@ main.four-columns{
 }
 
 @media(max-width: 650px) {
+    body.other-works {
+        overflow: auto;
+    }
+
+    body.other-works footer {
+        display: block;
+    }
+
     main.four-columns {
         flex-direction: column;
         height: auto;
