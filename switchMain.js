@@ -1,7 +1,7 @@
 const main = document.querySelector("main");
 const pageBody = document.body;
 
-const projectsBut = document.getElementById("projects");
+const portfolioBut = document.getElementById("portfolio");
 const otherWorksBut = document.getElementById("other-works");
 const aboutBut = document.getElementById("about");
 let scrollHintListenerBound = false;
@@ -12,9 +12,9 @@ function updateScrollHint() {
         return;
     }
     const section = window.location.hash.replace("#", "");
-    const isProjects = section === "projects" || section === "";
+    const isPortfolio = section === "portfolio" || section === "";
     const atTop = window.scrollY <= 10;
-    hint.classList.toggle("is-visible", isProjects && atTop);
+    hint.classList.toggle("is-visible", isPortfolio && atTop);
 }
 
 function bindScrollHintListener() {
@@ -28,7 +28,7 @@ function bindScrollHintListener() {
 function renderByHash() {
     const section = window.location.hash.replace("#", "");
     if (!section) {
-        window.location.hash = "projects";
+        window.location.hash = "portfolio";
         return;
     }
     setActiveSection(section);
@@ -36,9 +36,9 @@ function renderByHash() {
 
 function setActiveSection(section) {
     removeAllActive();
-    if (section === "projects") {
-        renderProjects();
-        projectsBut.classList = "selected";
+    if (section === "portfolio") {
+        renderPortfolio();
+        portfolioBut.classList = "selected";
         main.classList = "";
         pageBody.classList.remove("other-works");
         scrollToTop();
@@ -63,14 +63,14 @@ window.addEventListener("hashchange", renderByHash);
 renderByHash();
 
 function removeAllActive(){
-    projectsBut.classList='';
+    portfolioBut.classList='';
     otherWorksBut.classList='';
     aboutBut.classList='';
 }
 
-function renderProjects() {
+function renderPortfolio() {
     main.innerHTML = `
-        <div class="projects-gallery">
+        <div class="portfolio-gallery">
             <img alt="portfolio 6" src="PortfolioPics/7.png">
             <img alt="portfolio 1-1" src="PortfolioPics/1-1.png">
             <img alt="portfolio 1-2" src="PortfolioPics/1-2.png">

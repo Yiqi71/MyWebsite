@@ -16,12 +16,12 @@ a.underline {
     width: 0px;
     height: 0px;
 }
-/* 隐藏滚动条轨道 */
+/* 隐藏滚动条轨�?*/
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 
-/* 隐藏滚动条滑块 */
+/* 隐藏滚动条滑�?*/
 ::-webkit-scrollbar-thumb {
     background: transparent;
 }
@@ -97,7 +97,7 @@ menu section #tags a {
 
 #tags a:hover {
     color: gray;
-    /* 悬停时改变颜色 */
+    /* 悬停时改变颜�?*/
 }
 
 #tags a.selected::after {
@@ -116,7 +116,7 @@ menu section #tags a {
     cursor: default;
     /* 光标样式 */
     color: gray !important;
-    /* 可选：改变颜色，表明当前不可点击 */
+    /* 可选：改变颜色，表明当前不可点�?*/
 }
 
 main {
@@ -195,7 +195,7 @@ main {
     }
 }
 
-.projects-gallery {
+.portfolio-gallery {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -204,14 +204,14 @@ main {
     line-height: 0;
 }
 
-.projects-gallery img {
+.portfolio-gallery img {
     display: block;
     width: 100%;
     height: calc(100vh - 80px);
     object-fit: contain;
 }
 
-.projects-gallery .portfolio-link {
+.portfolio-gallery .portfolio-link {
     display: block;
     line-height: 1.4;
     font-size: 18px;
@@ -318,7 +318,7 @@ main.four-columns{
         font-size: 20px;
     }
 
-    .projects-gallery img {
+    .portfolio-gallery img {
         height: auto;
         object-fit: contain;
     }
@@ -407,7 +407,7 @@ main.four-columns{
 
     .project:hover .title {
         height: 80px;
-        /* 悬停时的高度，容纳 h1 和 p 标签 */
+        /* 悬停时的高度，容�?h1 �?p 标签 */
     }
 
     .project:hover .title p {
@@ -542,8 +542,8 @@ main.four-columns{
     font-style: italic;
 }
 
-/* Empty projects page styling */
-.empty-projects {
+/* Empty portfolio page styling */
+.empty-portfolio {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -552,13 +552,13 @@ main.four-columns{
     text-align: center;
 }
 
-.empty-projects h1 {
+.empty-portfolio h1 {
     font-size: 48px;
     margin-bottom: 20px;
     color: #ccc;
 }
 
-.empty-projects p {
+.empty-portfolio p {
     font-size: 24px;
     color: #888;
 }
@@ -601,11 +601,11 @@ main.four-columns{
         gap: 20px;
     }
     
-    .empty-projects h1 {
+    .empty-portfolio h1 {
         font-size: 36px;
     }
     
-    .empty-projects p {
+    .empty-portfolio p {
         font-size: 20px;
     }
 }
@@ -643,11 +643,11 @@ main.four-columns{
         flex: none;
     }
     
-    .empty-projects h1 {
+    .empty-portfolio h1 {
         font-size: 32px;
     }
     
-    .empty-projects p {
+    .empty-portfolio p {
         font-size: 18px;
     }
 }
