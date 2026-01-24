@@ -55,7 +55,7 @@ h3,
 
 menu {
     height: 60px;
-    width: calc(100% - 120px);
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,11 +67,12 @@ menu {
 menu section {
     height: 60px;
     width: 100%;
+    padding-inline: clamp(16px, 4vw, 80px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #1A1A1A;
-    position: fixed;
+    margin: 0 auto;
     z-index: 10;
 }
 
@@ -304,7 +305,7 @@ main.four-columns{
     }
 
     menu section {
-        width: calc(100% - 40px);
+        padding-inline: clamp(12px, 5vw, 24px);
         /* background-color: aqua; */
     }
 
@@ -361,7 +362,7 @@ main.four-columns{
 
 @media(min-width: 651px) {
     menu section{
-        width: calc(100% - 120px);
+        padding-inline: clamp(20px, 4vw, 80px);
     }
 
     .project {
