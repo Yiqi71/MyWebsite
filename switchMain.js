@@ -4,6 +4,26 @@ const pageBody = document.body;
 const projectsBut = document.getElementById("projects");
 const otherWorksBut = document.getElementById("other-works");
 const aboutBut = document.getElementById("about");
+let scrollHintListenerBound = false;
+
+function updateScrollHint() {
+    const hint = document.querySelector(".scroll-hint");
+    if (!hint) {
+        return;
+    }
+    const section = window.location.hash.replace("#", "");
+    const isProjects = section === "projects" || section === "";
+    const atTop = window.scrollY <= 10;
+    hint.classList.toggle("is-visible", isProjects && atTop);
+}
+
+function bindScrollHintListener() {
+    if (scrollHintListenerBound) {
+        return;
+    }
+    window.addEventListener("scroll", updateScrollHint, { passive: true });
+    scrollHintListenerBound = true;
+}
 
 function renderByHash() {
     const section = window.location.hash.replace("#", "");
@@ -74,7 +94,10 @@ function renderProjects() {
             <img alt="portfolio 5-2" src="PortfolioPics/5-2.png">
             <a class="underline portfolio-link" href="https://github.com/Yiqi71/dune_dictionary" target="_blank" rel="noopener noreferrer">Dunes Dictionary Github Link</a>
         </div>
+        <div class="scroll-hint" aria-hidden="true"></div>
     `;
+    bindScrollHintListener();
+    updateScrollHint();
 }
 
 function renderOtherWorks() {
