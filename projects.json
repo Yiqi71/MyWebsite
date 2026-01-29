@@ -169,6 +169,30 @@
     ]
   },
   {
+    "id": "zeroth",
+    "title": "Zeroth",
+    "description": "Website UI/UX Design",
+    "group": "Group Project",
+    "date": "2025 Fall",
+    "image": "ProjectPics/zeroth_1.png",
+    "detail": {
+      "blocks": [
+        {
+          "type": "p",
+          "html": "A group UI/UX project for Zeroth's official website. I owned the sitemap, wireframes, detailed UI, and micro-interaction design to shape a clear information structure and a polished browsing experience."
+        },
+        {
+          "type": "link",
+          "text": "Click to visit Zeroth",
+          "url": "https://www.zeroth0.com/"
+        }
+      ]
+    },
+    "category": [
+      "UX Design"
+    ]
+  },
+  {
     "id": "data-collector",
     "title": "A Kind Data Collector",
     "description": "Chrome Extension",

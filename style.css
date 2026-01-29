@@ -16,12 +16,12 @@ a.underline {
     width: 0px;
     height: 0px;
 }
-/* 隐藏滚动条轨�?*/
+/* 隐藏滚动条轨�?*/
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 
-/* 隐藏滚动条滑�?*/
+/* 隐藏滚动条滑�?*/
 ::-webkit-scrollbar-thumb {
     background: transparent;
 }
@@ -97,7 +97,7 @@ menu section #tags a {
 
 #tags a:hover {
     color: gray;
-    /* 悬停时改变颜�?*/
+    /* 悬停时改变颜�?*/
 }
 
 #tags a.selected::after {
@@ -116,7 +116,7 @@ menu section #tags a {
     cursor: default;
     /* 光标样式 */
     color: gray !important;
-    /* 可选：改变颜色，表明当前不可点�?*/
+    /* 可选：改变颜色，表明当前不可点�?*/
 }
 
 main {
@@ -242,7 +242,6 @@ main.four-columns{
     /* font-weight: 600; */
     margin: 0 0 20px 0;
     padding: 10px 0;
-    border-bottom: 2px solid #333;
     color: #ccc;
     position: sticky;
     top: 0;
@@ -284,6 +283,49 @@ main.four-columns{
 
 .title {
     margin: 1em;
+}
+
+.project-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+}
+
+
+.project-media::before {
+    content: "";
+    position: absolute;
+    inset: -12%;
+    background-image: var(--project-image);
+    background-size: cover;
+    background-position: center;
+    filter: blur(18px);
+    transform: scale(1.08);
+    opacity: 0.9;
+}
+
+.project-media img {
+    position: relative;
+    width: 100%;
+    height: 225px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Other Works: force project card size (fixed 400x225, 16:9) */
+main.other-works-rows .project,
+main.other-works-columns .project {
+    height: 225px;
+    width: 400px;
+}
+
+main.other-works-rows .project-media,
+main.other-works-columns .project-media {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: auto;
 }
 
 
@@ -407,7 +449,7 @@ main.four-columns{
 
     .project:hover .title {
         height: 80px;
-        /* 悬停时的高度，容�?h1 �?p 标签 */
+        /* 悬停时的高度，容�?h1 �?p 标签 */
     }
 
     .project:hover .title p {
@@ -692,6 +734,180 @@ main.four-columns{
 .portfolio-hotspot:focus-visible .portfolio-tooltip {
     opacity: 1;
 }
+
+
+
+
+
+
+
+
+/* Other Works rows layout */
+main.other-works-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: calc(100% - 80px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.other-works-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.other-works-section-title {
+    font-size: 26px;
+    margin: 0;
+    padding-bottom: 0;
+    color: #ccc;
+    text-align: left;
+}
+
+.other-works-section-desc {
+    margin: -6px 0 0 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #333;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #8f8f8f;
+}
+
+.other-works-row {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+}
+
+.other-works-row a {
+    display: block;
+    flex: 0 0 auto;
+}
+
+.other-works-row .project {
+    width: 400px;
+    height: 225px;
+    min-width: 400px;
+    max-width: 400px;
+}
+
+@media(max-width: 1200px) {
+    main.other-works-rows {
+        width: calc(100% - 60px);
+    }
+}
+
+@media(max-width: 900px) {
+    main.other-works-rows {
+        width: calc(100% - 40px);
+    }
+
+    .other-works-section-title {
+        font-size: 22px;
+    }
+
+.other-works-section-desc {
+    font-size: 14px;
+}
+
+    .other-works-row {
+        gap: 20px;
+    }
+}
+
+@media(max-width: 650px) {
+    main.other-works-rows {
+        width: calc(100% - 24px);
+        gap: 32px;
+    }
+
+    .other-works-section-title {
+        font-size: 20px;
+    }
+
+.other-works-section-desc {
+    font-size: 14px;
+}
+
+    .other-works-row {
+        gap: 16px;
+    }
+
+    .other-works-row .project {
+        width: 400px;
+        height: 225px;
+        min-width: 400px;
+        max-width: 400px;
+    }
+}
+
+
+/* Other Works rows: fixed card size */
+.other-works-row .project {
+    width: 400px;
+    height: 225px;
+    min-width: 400px;
+    max-width: 400px;
+}
+
+.other-works-row .project-media {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+}
+
+.other-works-row .project-media img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    max-width: none;
+    transform: translate(-50%, -50%);
+}
+
+
+.other-works-row .project {
+    width: 400px;
+    height: 225px;
+    min-width: 400px;
+    max-width: 400px;
+}
+
+
+/* Lock page horizontal scroll; allow only row scroll */
+body.other-works-rows {
+    overflow-x: hidden;
+}
+
+main.other-works-rows {
+    overflow-x: hidden;
+}
+
+
+/* Ensure rows don't expand to content so horizontal scroll works */
+main.other-works-rows {
+    align-items: stretch;
+}
+
+.other-works-section {
+    width: 100%;
+    min-width: 0;
+}
+
+.other-works-row {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+
+
 
 
 

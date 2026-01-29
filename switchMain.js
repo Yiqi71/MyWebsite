@@ -6,6 +6,8 @@ const otherWorksBut = document.getElementById("other-works");
 const aboutBut = document.getElementById("about");
 let scrollHintListenerBound = false;
 let projectsPromise = null;
+let otherWorksLayout = "rows";
+let otherWorksCleanup = null;
 
 function loadProjects() {
     if (!projectsPromise) {
@@ -50,25 +52,25 @@ function renderByHash() {
 function setActiveSection(section) {
     removeAllActive();
     if (section === "portfolio") {
+        cleanupOtherWorksLayout();
         renderPortfolio();
         portfolioBut.classList = "selected";
-        main.classList = "";
-        pageBody.classList.remove("other-works");
+        main.className = "";
+        pageBody.classList.remove("other-works-rows");
         scrollToTop();
         return;
     }
     if (section === "about") {
+        cleanupOtherWorksLayout();
         renderAbout();
         aboutBut.classList = "selected";
-        main.classList = "";
-        pageBody.classList.remove("other-works");
+        main.className = "";
+        pageBody.classList.remove("other-works-rows");
         scrollToTop();
         return;
     }
     renderOtherWorks();
     otherWorksBut.classList = "selected";
-    main.classList = "four-columns";
-    pageBody.classList.add("other-works");
     scrollToTop();
 }
 
@@ -148,47 +150,17 @@ function bindPortfolioTooltipFollow() {
 }
 
 function renderOtherWorks() {
-    main.innerHTML = `
-        <div class="column digital-column">
-            <h2 class="column-title">Digital</h2>
-            <div class="column-content" data-column="digital"></div>
-        </div>
-        <div class="column ux-column">
-            <h2 class="column-title">UX</h2>
-            <div class="column-content" data-column="ux"></div>
-        </div>
-        <div class="column physical-column">
-            <h2 class="column-title">Physical</h2>
-            <div class="column-content" data-column="physical"></div>
-        </div>
-        <div class="column other-column">
-            <h2 class="column-title">Other</h2>
-            <div class="column-content" data-column="other"></div>
-        </div>
-    `;
-
-    const columnOrder = {
-        digital: ["bk-trees", "QC-webpage", "data-collector", "whispers", "hi", "Kiwi", "popcorn-rain"],
-        ux: ["GBG-car"],
-        physical: ["ballance", "light-of-connection", "oops"],
-        other: ["life-of-a-drink", "moons-on-sale", "a-plate", "pAInter", "echoes"]
-    };
-
-    loadProjects().then(projects => {
-        const projectMap = new Map(projects.map(project => [project.id, project]));
-        Object.keys(columnOrder).forEach(columnKey => {
-            const container = main.querySelector(`[data-column="${columnKey}"]`);
-            if (!container) {
-                return;
-            }
-            const cardsHtml = columnOrder[columnKey]
-                .map(id => projectMap.get(id))
-                .filter(Boolean)
-                .map(project => renderProjectCard(project))
-                .join("");
-            container.innerHTML = cardsHtml;
+    cleanupOtherWorksLayout();
+    if (otherWorksLayout === "columns" && typeof window.applyOtherWorksFourColumns === "function") {
+        otherWorksCleanup = window.applyOtherWorksFourColumns({
+            main,
+            pageBody,
+            loadProjects,
+            renderProjectCard
         });
-    });
+        return;
+    }
+    otherWorksCleanup = applyOtherWorksRows();
 }
 
 function renderProjectCard(project) {
@@ -200,7 +172,9 @@ function renderProjectCard(project) {
     return `
         <a href="project-detail.html?id=${project.id}">
             <div id="${project.id}" class="project">
-                <img alt="${imageAlt}" src="${image}" width=400>
+                <div class="project-media" style="--project-image: url('${image}')">
+                    <img alt="${imageAlt}" src="${image}">
+                </div>
                 <div class="title">
                     <h1>${title}</h1>
                     <p>${description}</p>
@@ -230,5 +204,167 @@ I design structures that help institutions interpret signals and act responsibly
 
 function scrollToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+}
+
+function cleanupOtherWorksLayout() {
+    if (typeof otherWorksCleanup === "function") {
+        otherWorksCleanup();
+    }
+    otherWorksCleanup = null;
+}
+
+function getCurrentSection() {
+    return window.location.hash.replace("#", "") || "portfolio";
+}
+
+function setOtherWorksLayout(layout) {
+    const normalized = layout === "four-columns" ? "columns" : layout;
+    if (normalized !== "rows" && normalized !== "columns") {
+        console.warn(`Unknown other works layout: ${layout}`);
+        return;
+    }
+    otherWorksLayout = normalized;
+    if (getCurrentSection() === "other-works") {
+        renderOtherWorks();
+    }
+}
+
+window.setOtherWorksLayout = setOtherWorksLayout;
+
+function applyOtherWorksRows() {
+    const rowOrder = [
+        {
+            key: "interaction",
+            title: "Interaction Logic",
+            description: "systems that interpret input and decide how to respond",
+            ids: ["bk-trees", "Kiwi", "popcorn-rain", "hi", "zeroth"]
+        },
+        {
+            key: "data",
+            title: "Data Mediation",
+            description: "structuring, visualizing, and shaping information for use",
+            ids: ["QC-webpage", "data-collector"]
+        },
+        {
+            key: "physical",
+            title: "Physical Interaction",
+            description: "embodied sensing, feedback, and physical constraints",
+            ids: ["ballance", "light-of-connection", "oops"]
+        },
+        {
+            key: "material",
+            title: "Material Experiments",
+            description: "material, form, and fabrication as design constraints",
+            ids: ["moons-on-sale", "a-plate", "GBG-car", "life-of-a-drink", "whispers"]
+        }
+    ];
+
+    main.className = "other-works-rows";
+    pageBody.classList.add("other-works-rows");
+    main.innerHTML = rowOrder
+        .map(row => `
+            <section class="other-works-section">
+                <h2 class="other-works-section-title">${row.title}</h2>
+                <p class="other-works-section-desc">${row.description}</p>
+                <div class="other-works-row" data-row="${row.key}"></div>
+            </section>
+        `)
+        .join("");
+
+    const rowElements = Array.from(main.querySelectorAll(".other-works-row"));
+    const rowCleanup = bindRowScrollHandlers(rowElements);
+
+    loadProjects().then(projects => {
+        const projectMap = new Map(projects.map(project => [project.id, project]));
+        rowOrder.forEach(row => {
+            const container = main.querySelector(`[data-row="${row.key}"]`);
+            if (!container) {
+                return;
+            }
+            const cardsHtml = row.ids
+                .map(id => projectMap.get(id))
+                .filter(Boolean)
+                .map(project => renderProjectCard(project))
+                .join("");
+            container.innerHTML = cardsHtml;
+        });
+    });
+
+    return () => {
+        main.classList.remove("other-works-rows");
+        pageBody.classList.remove("other-works-rows");
+        rowCleanup();
+    };
+}
+
+function adjustRowCardWidths(container) {
+    const cards = container.querySelectorAll(".project");
+    cards.forEach(card => {
+        const title = card.querySelector(".title");
+        if (!title) {
+            return;
+        }
+        const textNodes = title.querySelectorAll("h1, p");
+        let maxTextWidth = 0;
+        textNodes.forEach(node => {
+            maxTextWidth = Math.max(maxTextWidth, measureTextWidth(node));
+        });
+        const styles = window.getComputedStyle(title);
+        const paddingLeft = parseFloat(styles.paddingLeft) || 0;
+        const paddingRight = parseFloat(styles.paddingRight) || 0;
+        const minWidth = Math.ceil(maxTextWidth + paddingLeft + paddingRight);
+        if (minWidth > 0) {
+            card.style.minWidth = `${minWidth}px`;
+            card.style.width = `${minWidth}px`;
+        }
+    });
+}
+
+function bindRowScrollHandlers(rows) {
+    const handlers = rows.map(row => {
+        const onWheel = (event) => {
+            if (row.scrollWidth <= row.clientWidth + 1) {
+                return;
+            }
+            const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+            if (delta === 0) {
+                return;
+            }
+            row.scrollLeft += delta;
+            event.preventDefault();
+        };
+        row.addEventListener("wheel", onWheel, { passive: false });
+        return () => row.removeEventListener("wheel", onWheel);
+    });
+
+    return () => {
+        handlers.forEach(cleanup => cleanup());
+    };
+}
+
+let measureSpan = null;
+
+function ensureMeasureSpan() {
+    if (measureSpan) {
+        return measureSpan;
+    }
+    measureSpan = document.createElement("span");
+    measureSpan.style.position = "absolute";
+    measureSpan.style.left = "-10000px";
+    measureSpan.style.top = "-10000px";
+    measureSpan.style.whiteSpace = "nowrap";
+    measureSpan.style.visibility = "hidden";
+    document.body.appendChild(measureSpan);
+    return measureSpan;
+}
+
+function measureTextWidth(node) {
+    const span = ensureMeasureSpan();
+    const computed = window.getComputedStyle(node);
+    span.style.font = computed.font;
+    span.style.letterSpacing = computed.letterSpacing;
+    span.style.textTransform = computed.textTransform;
+    span.textContent = node.textContent || "";
+    return span.getBoundingClientRect().width;
 }
 
