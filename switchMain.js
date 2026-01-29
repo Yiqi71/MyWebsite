@@ -1,10 +1,23 @@
-const main = document.querySelector("main");
+﻿const main = document.querySelector("main");
 const pageBody = document.body;
 
 const portfolioBut = document.getElementById("portfolio");
 const otherWorksBut = document.getElementById("other-works");
 const aboutBut = document.getElementById("about");
 let scrollHintListenerBound = false;
+let projectsPromise = null;
+
+function loadProjects() {
+    if (!projectsPromise) {
+        projectsPromise = fetch("projects.json")
+            .then(response => response.json())
+            .catch(error => {
+                console.error("Failed to load projects.json:", error);
+                return [];
+            });
+    }
+    return projectsPromise;
+}
 
 function updateScrollHint() {
     const hint = document.querySelector(".scroll-hint");
@@ -89,206 +102,112 @@ function renderPortfolio() {
             <img alt="portfolio 3-3" src="PortfolioPics/3-3.png">
             <img alt="portfolio 3-4" src="PortfolioPics/3-4.png">
             <img alt="portfolio 3-5" src="PortfolioPics/3-5.png">
-            <img alt="portfolio 4-1" src="PortfolioPics/4-1.png">
+            <div class="portfolio-video-card">
+                <img alt="portfolio 4-1" src="PortfolioPics/4-1.png">
+                <a
+                    class="portfolio-hotspot"
+                    href="https://youtu.be/ZFRtT8e7bBY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Click to see the full process and demo day recap"
+                >
+                    <span class="portfolio-tooltip"><span class="line">Click to see the full process</span><span class="line">and demo day recap</span></span>
+                </a>
+            </div>
             <img alt="portfolio 5-1" src="PortfolioPics/5-1.png">
             <img alt="portfolio 5-2" src="PortfolioPics/5-2.png">
-            <a class="underline portfolio-link" href="https://github.com/Yiqi71/dune_dictionary" target="_blank" rel="noopener noreferrer">Dunes Dictionary Github Link</a>
+            <a class="underline portfolio-link" href="https://github.com/Yiqi71" target="_blank" rel="noopener noreferrer">My Github</a>
         </div>
         <div class="scroll-hint" aria-hidden="true"></div>
     `;
     bindScrollHintListener();
     updateScrollHint();
+    bindPortfolioTooltipFollow();
+}
+
+function bindPortfolioTooltipFollow() {
+    const hotspot = document.querySelector(".portfolio-hotspot");
+    if (!hotspot) {
+        return;
+    }
+    const tooltip = hotspot.querySelector(".portfolio-tooltip");
+    if (!tooltip) {
+        return;
+    }
+
+    const moveTooltip = (event) => {
+        const rect = hotspot.getBoundingClientRect();
+        const x = event.clientX - rect.left + 12;
+        const y = event.clientY - rect.top + 12;
+        tooltip.style.left = `${x}px`;
+        tooltip.style.top = `${y}px`;
+    };
+
+    hotspot.addEventListener("mousemove", moveTooltip);
+    hotspot.addEventListener("mouseenter", moveTooltip);
 }
 
 function renderOtherWorks() {
     main.innerHTML = `
         <div class="column digital-column">
             <h2 class="column-title">Digital</h2>
-            <div class="column-content">
-                <a href="project-detail.html?id=bk-trees">
-                    <div id="bk-trees" class="project">
-                        <img alt="bk-trees img" src="ProjectPics/bk-trees_1.png" width=400>
-                        <div class="title">
-                            <h1>Brooklyn Trees</h1>
-                            <p>Front-end Development</p>
-                            <p>2025 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=QC-webpage">
-                    <div id="QC-webpage" class="project">
-                        <img alt="QC-webpage img" src="ProjectPics/QC-webpage_1.jpg" width=400>
-                        <div class="title">
-                            <h1>The Quantum Atlas</h1>
-                            <p>Front-end Development</p>
-                            <p>2025 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=data-collector">
-                    <div id="data-collector" class="project">
-                        <img alt="data-collector img" src="./ProjectPics/data-collector_1.png" width=400>
-                        <div class="title">
-                            <h1>A Kind Data Collector</h1>
-                            <p>Chrome Extension</p>
-                            <p>2024 Fall</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=whispers">
-                    <div id="whispers" class="project">
-                        <img alt="whispers img" src="ProjectPics/whispers_1.png" width=400>
-                        <div class="title">
-                            <h1>Whispers of the Past</h1>
-                            <p>VR Game</p>
-                            <p>2024 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=hi">
-                    <div id="hi" class="project">
-                        <img alt="hi" src="ProjectPics/hi_1.png" width=400>
-                        <div class="title">
-                            <h1>hi~</h1>
-                            <p>Front-end Development</p>
-                            <p>2025 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=Kiwi">
-                    <div id="kiwi" class="project">
-                        <img alt="kiwi img" src="ProjectPics/kiwi_1.png" width=400>
-                        <div class="title">
-                            <h1>Kiwi's Picture Advice</h1>
-                            <p>Front-end Development</p>
-                            <p>2025 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=popcorn-rain">
-                    <div id="popcorn-rain" class="project">
-                        <img alt="popcorn-rain img" src="ProjectPics/popcorn-rain_1.png" width=400>
-                        <div class="title">
-                            <h1>Popcorn Rain</h1>
-                            <p>p5.js Creative Computing</p>
-                            <p>2024 Spring</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <div class="column-content" data-column="digital"></div>
         </div>
-        
         <div class="column ux-column">
             <h2 class="column-title">UX</h2>
-            <div class="column-content">
-                <a href="project-detail.html?id=GBG-car">
-                    <div id="GBG-car" class="project">
-                        <img alt="GBG img" src="ProjectPics/GBG_1.jpg" width=400>
-                        <div class="title">
-                            <h1>GoBabyGo Car Frame Redesign</h1>
-                            <p>UX Design and Assistive Technology</p>
-                            <p>2025 Spring</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <div class="column-content" data-column="ux"></div>
         </div>
-        
         <div class="column physical-column">
             <h2 class="column-title">Physical</h2>
-            <div class="column-content">
-                <a href="project-detail.html?id=ballance">
-                    <div id="ballance" class="project">
-                        <img alt="ballance img" src="ProjectPics/ballance_1.png" width=400>
-                        <div class="title">
-                            <h1>Ballance</h1>
-                            <p>Arduino Interactive Toy</p>
-                            <p>2024 Fall</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=light-of-connection">
-                    <div id="light-of-connection" class="project">
-                        <img alt="light-of-connection img" src="ProjectPics/light-of-connection_1.png" width=400>
-                        <div class="title">
-                            <h1>Light of Connection</h1>
-                            <p>Arduino Interactive Wearable</p>
-                            <p>2024 Fall</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=oops">
-                    <div id="oops" class="project">
-                        <img alt="oops img" src="ProjectPics/oops_1.png" width=400>
-                        <div class="title">
-                            <h1>Oops, You Died.</h1>
-                            <p>Arduino Interactive Installation</p>
-                            <p>2024 Fall</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <div class="column-content" data-column="physical"></div>
         </div>
-        
         <div class="column other-column">
             <h2 class="column-title">Other</h2>
-            <div class="column-content">
-                
-                <a href="project-detail.html?id=life-of-a-drink">
-                    <div id="life-of-a-drink" class="project">
-                        <img alt="life-of-a-drink img" src="ProjectPics/life_1.png" width=400>
-                        <div class="title">
-                            <h1>Life of a Drink</h1>
-                            <p>360 Video</p>
-                            <p>2024 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                
-                
-                <a href="project-detail.html?id=moons-on-sale">
-                    <div id="moons-on-sale" class="project">
-                        <img alt="moons-on-sale img" src="ProjectPics/moons-on-sale_1.jpg" width=400>
-                        <div class="title">
-                            <h1>Moons on Sale</h1>
-                            <p>3D Printing Installation</p>
-                            <p>2024 Fall</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="project-detail.html?id=a-plate">
-                    <div id="a-plate" class="project">
-                        <img alt="a-plate img" src="ProjectPics/aplate_1.jpg" width=400>
-                        <div class="title">
-                            <h1>A Plate</h1>
-                            <p>Plastic Material Exploration</p>
-                            <p>2024 Spring</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=pAInter">
-                    <div id="pAInter" class="project">
-                        <img alt="pAInter img" src="ProjectPics/pAInter_1.png" width=400>
-                        <div class="title">
-                            <h1>pAInter</h1>
-                            <p>UX Design</p>
-                            <p>2022 Fall</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-detail.html?id=echoes">
-                    <div id="echoes" class="project">
-                        <img alt="echoes img" src="ProjectPics/echoes_1.jpg" width=400>
-                        <div class="title">
-                            <h1>Echoes</h1>
-                            <p>Board Game</p>
-                            <p>2025 Spring</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <div class="column-content" data-column="other"></div>
         </div>
+    `;
+
+    const columnOrder = {
+        digital: ["bk-trees", "QC-webpage", "data-collector", "whispers", "hi", "Kiwi", "popcorn-rain"],
+        ux: ["GBG-car"],
+        physical: ["ballance", "light-of-connection", "oops"],
+        other: ["life-of-a-drink", "moons-on-sale", "a-plate", "pAInter", "echoes"]
+    };
+
+    loadProjects().then(projects => {
+        const projectMap = new Map(projects.map(project => [project.id, project]));
+        Object.keys(columnOrder).forEach(columnKey => {
+            const container = main.querySelector(`[data-column="${columnKey}"]`);
+            if (!container) {
+                return;
+            }
+            const cardsHtml = columnOrder[columnKey]
+                .map(id => projectMap.get(id))
+                .filter(Boolean)
+                .map(project => renderProjectCard(project))
+                .join("");
+            container.innerHTML = cardsHtml;
+        });
+    });
+}
+
+function renderProjectCard(project) {
+    const title = project.title || "";
+    const description = project.description || "";
+    const date = project.date || "";
+    const image = project.image || "";
+    const imageAlt = title ? `${title} img` : "project image";
+    return `
+        <a href="project-detail.html?id=${project.id}">
+            <div id="${project.id}" class="project">
+                <img alt="${imageAlt}" src="${image}" width=400>
+                <div class="title">
+                    <h1>${title}</h1>
+                    <p>${description}</p>
+                    <p>${date}</p>
+                </div>
+            </div>
+        </a>
     `;
 }
 
@@ -312,3 +231,4 @@ I design structures that help institutions interpret signals and act responsibly
 function scrollToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 }
+

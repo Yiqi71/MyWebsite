@@ -651,3 +651,50 @@ main.four-columns{
         font-size: 18px;
     }
 }
+
+.portfolio-video-card {
+    position: relative;
+    width: 100%;
+}
+
+.portfolio-hotspot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    display: block;
+}
+
+.portfolio-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    padding: 8px 10px;
+    background: rgba(10, 10, 10, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.portfolio-tooltip .line {
+    display: block;
+    white-space: nowrap;
+}
+
+.portfolio-hotspot:hover .portfolio-tooltip,
+.portfolio-hotspot:focus-visible .portfolio-tooltip {
+    opacity: 1;
+}
+
+
+
+
+
+
