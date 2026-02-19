@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Things</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #111;
+            color: #f4f4f4;
+            font-family: "Space Grotesk", "Manrope", sans-serif;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+        .card {
+            width: min(720px, 100%);
+            border: 1px solid #3d3d3d;
+            border-radius: 16px;
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(28px, 4vw, 38px);
+        }
+        p {
+            margin: 0;
+            line-height: 1.5;
+            color: #cfcfcf;
+        }
+        ul {
+            margin: 16px 0 0;
+            padding-left: 18px;
+        }
+        a {
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <section class="card">
+        <h1>Tiny Things</h1>
+        <p>Mini interactions live in their own routes and can be rotated daily from the main site.</p>
+        <ul>
+            <li><a href="uncertainty-slider/">Uncertainty Slider</a></li>
+            <li><a href="absence-heatmap/">Absence Heatmap</a></li>
+            <li><a href="doodle-day-night/">Doodle Day/Night</a></li>
+            <li><a href="mouth-to-vase/">Mouth to Vase</a></li>
+            <li><a href="../index.html#portfolio">Back to main site</a></li>
+        </ul>
+    </section>
+</body>
+</html>

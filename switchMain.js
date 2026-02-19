@@ -6,8 +6,10 @@ const otherWorksBut = document.getElementById("other-works");
 const aboutBut = document.getElementById("about");
 let scrollHintListenerBound = false;
 let projectsPromise = null;
+let tinyThingsPromise = null;
 let otherWorksLayout = "rows";
 let otherWorksCleanup = null;
+let tinyWidget = null;
 
 function loadProjects() {
     if (!projectsPromise) {
@@ -19,6 +21,23 @@ function loadProjects() {
             });
     }
     return projectsPromise;
+}
+
+function loadTinyThings() {
+    if (!tinyThingsPromise) {
+        tinyThingsPromise = fetch("tinies.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                return response.json();
+            })
+            .catch(error => {
+                console.error("Failed to load tinies.json:", error);
+                return [];
+            });
+    }
+    return tinyThingsPromise;
 }
 
 function updateScrollHint() {
@@ -54,6 +73,7 @@ function setActiveSection(section) {
     if (section === "portfolio") {
         cleanupOtherWorksLayout();
         renderPortfolio();
+        setTinyWidgetVisibility(false);
         portfolioBut.classList = "selected";
         main.className = "";
         pageBody.classList.remove("other-works-rows");
@@ -63,6 +83,7 @@ function setActiveSection(section) {
     if (section === "about") {
         cleanupOtherWorksLayout();
         renderAbout();
+        setTinyWidgetVisibility(false);
         aboutBut.classList = "selected";
         main.className = "";
         pageBody.classList.remove("other-works-rows");
@@ -70,6 +91,7 @@ function setActiveSection(section) {
         return;
     }
     renderOtherWorks();
+    setTinyWidgetVisibility(true);
     otherWorksBut.classList = "selected";
     scrollToTop();
 }
@@ -366,5 +388,131 @@ function measureTextWidth(node) {
     span.style.textTransform = computed.textTransform;
     span.textContent = node.textContent || "";
     return span.getBoundingClientRect().width;
+}
+
+function ensureTinyWidget() {
+    if (tinyWidget) {
+        return tinyWidget;
+    }
+    const root = document.createElement("div");
+    root.className = "tiny-widget";
+    root.innerHTML = `
+        <button class="tiny-widget-trigger" type="button" aria-label="Open today's tiny thing">?</button>
+        <div class="tiny-widget-overlay" aria-hidden="true"></div>
+        <section class="tiny-widget-modal" role="dialog" aria-modal="true" aria-labelledby="tiny-widget-title">
+            <button class="tiny-widget-close-icon" type="button" aria-label="Close tiny thing modal">&times;</button>
+            <p class="tiny-widget-eyebrow">Today's tiny thing</p>
+            <h2 id="tiny-widget-title" class="tiny-widget-title">Loading...</h2>
+            <p class="tiny-widget-desc">Picking today's interaction.</p>
+            <div class="tiny-widget-actions">
+                <a class="tiny-widget-play" href="tiny/">Play now</a>
+            </div>
+        </section>
+    `;
+    document.body.appendChild(root);
+
+    const trigger = root.querySelector(".tiny-widget-trigger");
+    const overlay = root.querySelector(".tiny-widget-overlay");
+    const closeButton = root.querySelector(".tiny-widget-close-icon");
+    const playLink = root.querySelector(".tiny-widget-play");
+    const titleEl = root.querySelector(".tiny-widget-title");
+    const descEl = root.querySelector(".tiny-widget-desc");
+    const modal = root.querySelector(".tiny-widget-modal");
+
+    if (!trigger || !overlay || !closeButton || !playLink || !titleEl || !descEl || !modal) {
+        return null;
+    }
+
+    const openModal = () => {
+        if (!root.classList.contains("is-visible")) {
+            return;
+        }
+        root.classList.add("is-open");
+    };
+
+    const closeModal = () => {
+        root.classList.remove("is-open");
+    };
+
+    trigger.addEventListener("click", openModal);
+    closeButton.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeModal();
+        }
+    });
+
+    tinyWidget = {
+        root,
+        titleEl,
+        descEl,
+        playLink,
+        closeModal
+    };
+
+    return tinyWidget;
+}
+
+function getLocalDateKey(date = new Date()) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
+
+function hashString(input) {
+    let hash = 5381;
+    for (let i = 0; i < input.length; i += 1) {
+        hash = ((hash << 5) + hash) + input.charCodeAt(i);
+        hash |= 0;
+    }
+    return Math.abs(hash);
+}
+
+function pickDailyTiny(tinyList, date = new Date()) {
+    if (!Array.isArray(tinyList) || tinyList.length === 0) {
+        return null;
+    }
+    const dateKey = getLocalDateKey(date);
+    const index = hashString(dateKey) % tinyList.length;
+    return tinyList[index];
+}
+
+function setTinyWidgetVisibility(shouldShow) {
+    const widget = ensureTinyWidget();
+    if (!widget) {
+        return;
+    }
+    widget.root.classList.toggle("is-visible", shouldShow);
+    if (!shouldShow) {
+        widget.closeModal();
+        return;
+    }
+    renderDailyTinyThing();
+}
+
+function renderDailyTinyThing() {
+    const widget = ensureTinyWidget();
+    if (!widget) {
+        return;
+    }
+
+    loadTinyThings().then(tinyList => {
+        const todayTiny = pickDailyTiny(tinyList);
+        if (!todayTiny) {
+            widget.titleEl.textContent = "Today's game is: coming soon";
+            widget.descEl.textContent = "No mini interactions are listed yet.";
+            widget.playLink.textContent = "See tiny archive";
+            widget.playLink.setAttribute("href", "tiny/");
+            return;
+        }
+        const title = todayTiny.title || "Untitled tiny thing";
+        widget.titleEl.textContent = `Today's game is: ${title}`;
+        widget.descEl.textContent = todayTiny.desc || "A small daily interaction.";
+        widget.playLink.textContent = "Play now";
+        widget.playLink.setAttribute("href", `tiny/${todayTiny.slug}/`);
+    });
 }
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouth to Vase</title>
+    <style>
+        :root { color-scheme: dark; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at 15% 20%, #2a2a2a 0, #161616 56%, #101010 100%);
+            color: #f5f5f5;
+            font-family: "Space Grotesk", "Manrope", sans-serif;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+        .shell {
+            width: min(920px, 100%);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 18px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        h1 { margin: 0; font-size: clamp(26px, 3.5vw, 40px); }
+        .desc { margin: 8px 0 0; color: #d0d0d0; line-height: 1.45; }
+        #app { margin-top: 16px; min-height: 528px; }
+        #app canvas {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        #app button {
+            margin: 10px 8px 0 0;
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-family: "Space Grotesk", "Manrope", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.2;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+        }
+        .links {
+            margin-top: 12px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .links a {
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-family: "Space Grotesk", "Manrope", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.2;
+            text-decoration: none;
+            color: inherit;
+        }
+        .links a:hover, #app button:hover { background: rgba(255, 255, 255, 0.1); }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" defer></script>
+    <script src="https://unpkg.com/ml5@1.0.1/dist/ml5.min.js" defer></script>
+    <script src="./sketch.js" defer></script>
+</head>
+<body>
+    <main class="shell">
+        <h1>Mouth to Vase</h1>
+        <p class="desc">Record your mouth-width pattern for 3 seconds, then switch to a rotating 3D vase-like trace.</p>
+        <section id="app" aria-label="Mouth to vase interaction"></section>
+        <nav class="links" aria-label="Page links">
+            <a href="../../index.html#other-works">Back to main site</a>
+        </nav>
+    </main>
+</body>
+</html>
