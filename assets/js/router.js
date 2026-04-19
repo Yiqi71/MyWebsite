@@ -13,7 +13,7 @@ let tinyWidget = null;
 
 function loadProjects() {
     if (!projectsPromise) {
-        projectsPromise = fetch("projects.json")
+        projectsPromise = fetch("data/projects.json")
             .then(response => response.json())
             .catch(error => {
                 console.error("Failed to load projects.json:", error);
@@ -25,7 +25,7 @@ function loadProjects() {
 
 function loadTinyThings() {
     if (!tinyThingsPromise) {
-        tinyThingsPromise = fetch("tinies.json")
+        tinyThingsPromise = fetch("data/tinies.json")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}`);
@@ -173,8 +173,8 @@ function bindPortfolioTooltipFollow() {
 
 function renderOtherWorks() {
     cleanupOtherWorksLayout();
-    if (otherWorksLayout === "columns" && typeof window.applyOtherWorksFourColumns === "function") {
-        otherWorksCleanup = window.applyOtherWorksFourColumns({
+    if (otherWorksLayout === "columns" && typeof window.applyOtherWorksColumns === "function") {
+        otherWorksCleanup = window.applyOtherWorksColumns({
             main,
             pageBody,
             loadProjects,

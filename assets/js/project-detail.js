@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const projectId = urlParams.get('id');
 
 // 从 JSON 加载项目数据
-fetch("projects.json")
+fetch("data/projects.json")
   .then(response => response.json())
   .then(projects => {
     // 在数组里查找对应 id 的项目

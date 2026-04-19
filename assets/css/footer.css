@@ -4,8 +4,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #1A1A1A; /* 跟你的 body 保持一致 */
-  color: #f0f8ff;
+  background-color: #efeae3;
+  color: #393739;
   padding: 20px;
   padding-top: 240px;
   box-sizing: border-box;
@@ -18,7 +18,7 @@ footer {
 }
 
 .footer-top .left {
-  flex: 1; /* 左边空 */
+  flex: 1;
 }
 
 .footer-top .right {
@@ -51,7 +51,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: gray;
+  color: #8a929d;
 }
 
 .footer-bottom {
