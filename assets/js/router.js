@@ -175,7 +175,7 @@ function renderAbout(){
     <div class="intro-container">
             <img alt="" src="" width="400">
             <div class="intro-text">
-                <h1>Hi, I'm Yiqi Chen, a Senior in Interactive Media Arts (IMA) at NYU.</h1>
+                <h1>Hi, I'm Yiqi Chen, a first-year MPS student in Information Science at Cornell University and a graduate of NYU IMA.</h1>
                 <p>I am a designer working on systems where participation is risky, uneven, or incomplete.
 My work examines how responsibility is assigned when people hesitate, stay silent, or express themselves imperfectly. 
 Instead of asking individuals to perform better, 

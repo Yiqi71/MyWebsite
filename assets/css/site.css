@@ -282,7 +282,7 @@ main {
     height: 62px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
-    background: var(--surface-strong);
+    background: var(--bg-color);
     color: var(--text-color);
     font-family: "Space Grotesk", sans-serif;
     font-size: 34px;
@@ -309,7 +309,7 @@ main {
     border: 1px solid var(--border-color);
     border-radius: 18px;
     padding: 22px;
-    background: var(--surface-strong);
+    background: var(--bg-color);
     box-shadow: 0 24px 58px rgba(57, 55, 57, 0.18);
     opacity: 0;
     pointer-events: none;
