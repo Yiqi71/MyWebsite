@@ -59,6 +59,7 @@ h1,
 h2,
 h3,
 #tags a,
+.header-special,
 .footer-title {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 600;
@@ -223,6 +224,35 @@ main {
     height: calc(100vh - 80px);
     object-fit: contain;
     background-color: var(--accent-color);
+}
+
+.portfolio-intro {
+    width: calc(100% - clamp(32px, 8vw, 120px));
+    margin: clamp(24px, 5vw, 72px) auto 0;
+    line-height: 1.1;
+}
+
+.header-special {
+    font-size: 56px;
+}
+
+.portfolio-cover {
+    display: block;
+    line-height: 0;
+}
+
+.portfolio-cover-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 40px);
+    width: calc(100% - clamp(32px, 8vw, 120px));
+    margin: clamp(16px, 3vw, 40px) auto 0;
+    line-height: 0;
+}
+
+.portfolio-cover-grid .portfolio-cover img {
+    width: 100%;
+    height: auto;
 }
 
 .portfolio-gallery .portfolio-link {
@@ -459,6 +489,18 @@ main.other-works-columns .project-media {
     .portfolio-gallery img {
         height: auto;
         object-fit: contain;
+    }
+
+    .portfolio-intro {
+        width: calc(100% - 24px);
+        margin-top: 24px;
+    }
+
+    .portfolio-cover-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        width: calc(100% - 24px);
+        margin-top: 12px;
     }
 
     .project {
@@ -744,54 +786,6 @@ main.other-works-columns .project-media {
         padding: 18px;
     }
 }
-
-.portfolio-video-card {
-    position: relative;
-    width: 100%;
-}
-
-.portfolio-hotspot {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    display: block;
-}
-
-.portfolio-tooltip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    padding: 8px 10px;
-    background: rgba(239, 234, 227, 0.95);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: 0.2px;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-}
-
-.portfolio-tooltip .line {
-    display: block;
-    white-space: nowrap;
-}
-
-.portfolio-hotspot:hover .portfolio-tooltip,
-.portfolio-hotspot:focus-visible .portfolio-tooltip {
-    opacity: 1;
-}
-
-
-
-
-
-
-
 
 /* Other Works rows layout */
 main.other-works-rows {

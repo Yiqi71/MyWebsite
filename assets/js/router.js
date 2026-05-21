@@ -108,67 +108,30 @@ function removeAllActive(){
 function renderPortfolio() {
     main.innerHTML = `
         <div class="portfolio-gallery">
-            <img alt="portfolio 6" src="PortfolioPics/7.png">
-            <img alt="portfolio 1-1" src="PortfolioPics/1-1.png">
-            <img alt="portfolio 1-2" src="PortfolioPics/1-2.png">
-            <img alt="portfolio 1-3" src="PortfolioPics/1-3.png">
-            <img alt="portfolio 1-4" src="PortfolioPics/1-4.png">
-            <img alt="portfolio 1-5" src="PortfolioPics/1-5.png">
-            <img alt="portfolio 1-6" src="PortfolioPics/1-6.png">
-            <img alt="portfolio 2-1" src="PortfolioPics/2-1.png">
-            <img alt="portfolio 2-2" src="PortfolioPics/2-2.png">
-            <img alt="portfolio 2-3" src="PortfolioPics/2-3.png">
-            <img alt="portfolio 2-4" src="PortfolioPics/2-4.png">
-            <img alt="portfolio 2-5" src="PortfolioPics/2-5.png">
-            <img alt="portfolio 2-6" src="PortfolioPics/2-6.png">
-            <img alt="portfolio 3-1" src="PortfolioPics/3-1.png">
-            <img alt="portfolio 3-2" src="PortfolioPics/3-2.png">
-            <img alt="portfolio 3-3" src="PortfolioPics/3-3.png">
-            <img alt="portfolio 3-4" src="PortfolioPics/3-4.png">
-            <img alt="portfolio 3-5" src="PortfolioPics/3-5.png">
-            <div class="portfolio-video-card">
-                <img alt="portfolio 4-1" src="PortfolioPics/4-1.png">
-                <a
-                    class="portfolio-hotspot"
-                    href="https://youtu.be/ZFRtT8e7bBY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Click to see the full process and demo day recap"
-                >
-                    <span class="portfolio-tooltip"><span class="line">Click to see the full process</span><span class="line">and demo day recap</span></span>
+            <!-- <img alt="portfolio 6" src="PortfolioPics/7.png"> -->
+            <header class="portfolio-intro header-special">Hello,<br>I'm Yiqi.</header>
+            <div class="portfolio-cover-grid">
+                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-1" aria-label="Open portfolio project 1">
+                    <img alt="portfolio 1 cover" src="PortfolioPics/1-1.png">
+                </a>
+                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-2" aria-label="Open portfolio project 2">
+                    <img alt="portfolio 2 cover" src="PortfolioPics/2-1.png">
+                </a>
+                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-3" aria-label="Open portfolio project 3">
+                    <img alt="portfolio 3 cover" src="PortfolioPics/3-1.png">
+                </a>
+                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-4" aria-label="Open portfolio project 4">
+                    <img alt="portfolio 4 cover" src="PortfolioPics/4-1.png">
+                </a>
+                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-5" aria-label="Open portfolio project 5">
+                    <img alt="portfolio 5 cover" src="PortfolioPics/5-1.png">
                 </a>
             </div>
-            <img alt="portfolio 5-1" src="PortfolioPics/5-1.png">
-            <img alt="portfolio 5-2" src="PortfolioPics/5-2.png">
-            <a class="underline portfolio-link" href="https://github.com/Yiqi71" target="_blank" rel="noopener noreferrer">My Github</a>
         </div>
         <div class="scroll-hint" aria-hidden="true"></div>
     `;
     bindScrollHintListener();
     updateScrollHint();
-    bindPortfolioTooltipFollow();
-}
-
-function bindPortfolioTooltipFollow() {
-    const hotspot = document.querySelector(".portfolio-hotspot");
-    if (!hotspot) {
-        return;
-    }
-    const tooltip = hotspot.querySelector(".portfolio-tooltip");
-    if (!tooltip) {
-        return;
-    }
-
-    const moveTooltip = (event) => {
-        const rect = hotspot.getBoundingClientRect();
-        const x = event.clientX - rect.left + 12;
-        const y = event.clientY - rect.top + 12;
-        tooltip.style.left = `${x}px`;
-        tooltip.style.top = `${y}px`;
-    };
-
-    hotspot.addEventListener("mousemove", moveTooltip);
-    hotspot.addEventListener("mouseenter", moveTooltip);
 }
 
 function renderOtherWorks() {
@@ -515,4 +478,3 @@ function renderDailyTinyThing() {
         widget.playLink.setAttribute("href", `tiny/${todayTiny.slug}/`);
     });
 }
-

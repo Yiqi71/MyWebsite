@@ -12,3 +12,30 @@
     text-align: left;
     width: 100%;
 }
+
+.portfolio-detail-page #project-detail {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+.portfolio-detail-gallery {
+    gap: 0;
+    line-height: 0;
+}
+
+.portfolio-detail-page #project-detail img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    background-color: var(--accent-color);
+}
+
+@media(max-width: 650px) {
+    .portfolio-detail-page #project-detail img {
+        height: auto;
+    }
+}
