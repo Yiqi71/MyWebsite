@@ -5,9 +5,8 @@ html { scroll-behavior: smooth; }
 .skip-link { position: absolute; left: 16px; top: -60px; z-index: 20; padding: 12px; background: #393739; color: white; }
 .skip-link:focus { top: 12px; }
 .ux-header { width: 100%; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 76px); border-bottom: 1px solid var(--border-color); }
-.ux-name { font: 600 23px/1.1 Futura, Manrope, sans-serif; white-space: nowrap; }
-.ux-mark { display: inline-block; margin-left: 6px; color: #8a929d; }
-.ux-header nav { display: flex; flex-wrap: wrap; gap: clamp(14px, 3vw, 38px); font: 500 15px/1.3 "Manrope", sans-serif; }
+.ux-name { font: 500 22px/1.15 Futura, Manrope, sans-serif; white-space: nowrap; }
+.ux-header nav { display: flex; flex-wrap: wrap; gap: clamp(14px, 3vw, 38px); font: 500 17px/1.25 Futura, Manrope, sans-serif; }
 .ux-header nav a:hover, .ux-text-link:hover, .ux-card-links a:hover, .ux-about-links a:hover, .ux-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .ux-page main { display: block; margin: 0 !important; }
 .ux-hero, .ux-section { width: min(100% - 40px, 1320px); margin-inline: auto; }
@@ -28,7 +27,7 @@ html { scroll-behavior: smooth; }
 
 .ux-media { display: block; min-width: 0; overflow: hidden; background: #8a929d; }
 .ux-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .35s ease; }
-.ux-media:hover img { transform: scale(1.025); }
+a.ux-media:hover img { transform: scale(1.025); }
 
 .ux-card-copy { display: flex; flex-direction: column; flex: 1; padding: clamp(24px, 3vw, 42px); }
 .ux-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
@@ -55,5 +54,5 @@ html { scroll-behavior: smooth; }
 .ux-about > div:nth-child(2) > p { max-width: 600px; margin: 0; font-size: clamp(19px, 2vw, 24px); line-height: 1.55; }
 .ux-about-links { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 32px; font-weight: 700; }
 .ux-footer { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 100px; height: auto; padding: 28px clamp(20px, 5vw, 76px); border-top: 1px solid var(--border-color); font-size: 14px; font-weight: 700; }
-@media (max-width: 760px) { .ux-header { align-items: flex-start; flex-direction: column; gap: 18px; } .ux-header nav { gap: 18px; font-size: 13px; } .ux-hero { padding: 80px 0 70px; } .ux-feature-grid, .ux-all-grid, .ux-about { grid-template-columns: 1fr; } .ux-card { grid-template-columns: 1fr; min-height: 0; } .ux-media, .ux-placeholder { min-height: 0; aspect-ratio: 16 / 10; } .ux-media img { aspect-ratio: 16 / 10; } .ux-card-copy { padding: 24px; } .ux-card h3 { margin-top: 24px; } .ux-section { padding: 60px 0 76px; } .ux-about { gap: 24px; } }
+@media (max-width: 760px) { .ux-header { align-items: flex-start; flex-direction: column; gap: 18px; } .ux-header nav { gap: 18px; font-size: 15px; } .ux-hero { padding: 80px 0 70px; } .ux-feature-grid, .ux-all-grid, .ux-about { grid-template-columns: 1fr; } .ux-card { grid-template-columns: 1fr; min-height: 0; } .ux-media, .ux-placeholder { min-height: 0; aspect-ratio: 16 / 10; } .ux-media img { aspect-ratio: 16 / 10; } .ux-card-copy { padding: 24px; } .ux-card h3 { margin-top: 24px; } .ux-section { padding: 60px 0 76px; } .ux-about { gap: 24px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ux-media img { transition: none; } }

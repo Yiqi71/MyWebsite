@@ -1,0 +1,7 @@
+/* The shared detail templates retain their original menu outside Selected Work. */
+.selected-detail-back { display: none; }
+.selected-detail menu { display: none; }
+.selected-detail .selected-detail-back { display: block; box-sizing: border-box; width: 100%; padding: 24px clamp(20px, 5vw, 80px); border-bottom: 1px solid rgba(57,55,57,.2); color: #393739; font: 700 15px/1.4 Manrope, sans-serif; text-decoration: none; }
+.selected-detail .selected-detail-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+.selected-detail .selected-detail-back:focus-visible { outline: 3px solid #4d657d; outline-offset: -5px; }
+.selected-detail main { margin-top: 0 !important; }

@@ -2,6 +2,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 const projectId = urlParams.get('id');
 
+// Older links to the featured project should open its dedicated case study.
+if (projectId === 'QC-webpage') {
+  window.location.replace('quantum-atlas.html');
+} else {
 // 从 JSON 加载项目数据
 fetch("data/projects.json")
   .then(response => response.json())
@@ -30,6 +34,8 @@ fetch("data/projects.json")
     console.error("加载项目数据失败:", error);
     document.getElementById('project-detail').innerHTML = "<p>无法加载项目数据。</p>";
   });
+
+}
 
 function renderDetailBlocks(detail) {
   if (!detail) {
