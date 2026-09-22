@@ -1,0 +1,59 @@
+html { scroll-behavior: smooth; }
+.ux-page { display: block; background: #efeae3; color: #393739; }
+.ux-page * { box-sizing: border-box; }
+.ux-page a:focus-visible { outline: 3px solid #4d657d; outline-offset: 4px; }
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 20; padding: 12px; background: #393739; color: white; }
+.skip-link:focus { top: 12px; }
+.ux-header { width: 100%; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 76px); border-bottom: 1px solid var(--border-color); }
+.ux-name { font: 600 23px/1.1 Futura, Manrope, sans-serif; white-space: nowrap; }
+.ux-mark { display: inline-block; margin-left: 6px; color: #8a929d; }
+.ux-header nav { display: flex; flex-wrap: wrap; gap: clamp(14px, 3vw, 38px); font: 500 15px/1.3 "Manrope", sans-serif; }
+.ux-header nav a:hover, .ux-text-link:hover, .ux-card-links a:hover, .ux-about-links a:hover, .ux-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ux-page main { display: block; margin: 0 !important; }
+.ux-hero, .ux-section { width: min(100% - 40px, 1320px); margin-inline: auto; }
+.ux-hero { padding: clamp(52px, 7vw, 90px) 0 clamp(50px, 6vw, 75px); }
+.ux-eyebrow { margin: 0 0 26px; color: #755f56; font: 700 13px/1.4 "Manrope", sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.ux-hero h1 { max-width: 1000px; margin: 0; font: 500 clamp(42px, 5.5vw, 72px)/1.08 Futura, Manrope, sans-serif; letter-spacing: -.04em; }
+.ux-lede { max-width: 650px; margin: 32px 0 0; font-size: 18px; line-height: 1.5; }
+.ux-actions { display: flex; align-items: center; gap: 30px; margin-top: 34px; }
+.ux-button { display: inline-flex; gap: 24px; justify-content: space-between; padding: 16px 20px; min-width: 185px; background: #393739; color: white; font-weight: 700; }
+.ux-button:hover { background: #5b5658; }
+.ux-text-link { font-weight: 700; }
+.ux-section { padding: 48px 0 96px; border-top: 1px solid var(--border-color); scroll-margin-top: 28px; }
+.ux-section-heading { margin-bottom: 30px; }
+.ux-section-heading h2, .ux-about h2 { margin: 0; max-width: 760px; font: 500 clamp(31px, 3.5vw, 50px)/1.13 Futura, Manrope, sans-serif; letter-spacing: -.04em; }
+.ux-section-heading > p:last-child { max-width: 650px; margin: 18px 0 0; font-size: 18px; line-height: 1.5; }
+.ux-feature-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; }
+.ux-card { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); min-width: 0; min-height: 380px; background: rgba(255,255,255,.52); border: 1px solid var(--border-color); }
+
+.ux-media { display: block; min-width: 0; overflow: hidden; background: #8a929d; }
+.ux-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .35s ease; }
+.ux-media:hover img { transform: scale(1.025); }
+
+.ux-card-copy { display: flex; flex-direction: column; flex: 1; padding: clamp(24px, 3vw, 42px); }
+.ux-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.ux-status-list { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.ux-number { font: 600 16px Futura, Manrope, sans-serif; }
+.ux-card-index { display: inline-flex; align-items: baseline; gap: 11px; }
+.ux-year { color: #755f56; font: 600 13px/1.3 Manrope, sans-serif; }
+.ux-status { padding: 5px 9px; border: 1px solid rgba(57,55,57,.25); border-radius: 100px; font-size: 12px; white-space: nowrap; }
+.ux-card h3 { margin: 34px 0 12px; font: 500 clamp(27px, 2.7vw, 38px)/1.14 Futura, Manrope, sans-serif; letter-spacing: -.025em; }
+.ux-card p { margin: 0; max-width: 600px; font-size: 17px; line-height: 1.55; }
+.ux-card-links { display: flex; flex-wrap: wrap; gap: 24px; margin-top: auto; padding-top: 30px; font-size: 15px; font-weight: 700; }
+.ux-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; min-height: 100%; background: linear-gradient(135deg, #98a3aa, #596b77); color: #fff; }
+.ux-placeholder span { font: 600 clamp(45px, 7vw, 84px)/1 Futura, Manrope, sans-serif; letter-spacing: -.07em; }
+.ux-placeholder small { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+.ux-all-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 28px; }
+.ux-all-grid a, .ux-all-pending { display: flex; justify-content: space-between; align-items: baseline; gap: 15px; padding: 20px 0; border-bottom: 1px solid var(--border-color); }
+.ux-all-grid a:hover span { text-decoration: underline; text-underline-offset: 4px; }
+.ux-all-grid span { font: 600 clamp(18px, 2vw, 25px)/1.25 Futura, Manrope, sans-serif; }
+.ux-all-grid small { color: #755f56; font-size: 12px; text-align: right; }
+.ux-all-pending { opacity: .62; }
+.ux-all-note { margin-top: 20px; }
+.ux-all-note a { text-decoration: underline; }
+.ux-about { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.ux-about > div:nth-child(2) > p { max-width: 600px; margin: 0; font-size: clamp(19px, 2vw, 24px); line-height: 1.55; }
+.ux-about-links { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 32px; font-weight: 700; }
+.ux-footer { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 100px; height: auto; padding: 28px clamp(20px, 5vw, 76px); border-top: 1px solid var(--border-color); font-size: 14px; font-weight: 700; }
+@media (max-width: 760px) { .ux-header { align-items: flex-start; flex-direction: column; gap: 18px; } .ux-header nav { gap: 18px; font-size: 13px; } .ux-hero { padding: 80px 0 70px; } .ux-feature-grid, .ux-all-grid, .ux-about { grid-template-columns: 1fr; } .ux-card { grid-template-columns: 1fr; min-height: 0; } .ux-media, .ux-placeholder { min-height: 0; aspect-ratio: 16 / 10; } .ux-media img { aspect-ratio: 16 / 10; } .ux-card-copy { padding: 24px; } .ux-card h3 { margin-top: 24px; } .ux-section { padding: 60px 0 76px; } .ux-about { gap: 24px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ux-media img { transition: none; } }

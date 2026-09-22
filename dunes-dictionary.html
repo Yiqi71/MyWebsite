@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dunes Dictionary: an interactive bilingual dictionary website built by Yiqi Chen as part of a six-person team.">
+  <title>Dunes Dictionary — Yiqi Chen</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/dunes-case.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dunes-page">
+  <a class="skip-link" href="#case-main">Skip to case study</a>
+  <header class="dunes-nav"><a href="ux-engineering.html#selected">← Selected Work</a><a href="index.html#portfolio">Full Portfolio ↗</a></header>
+  <main id="case-main">
+    <section class="dunes-hero">
+      <p class="dunes-kicker">Launched website · UX design &amp; engineering</p>
+      <h1>Dunes Dictionary</h1>
+      <p class="dunes-intro">A bilingual dictionary built for finding a term and following the relationships around it. I helped shape the UI/UX with two teammates, then independently built the public website and a separate admin site for usage monitoring and content updates.</p>
+      <div class="dunes-hero-links">
+        <a href="https://dunes-dictionary.com/" target="_blank" rel="noopener noreferrer">Visit live website ↗</a>
+        <a href="https://github.com/Yiqi71/dunes_dictionary_public" target="_blank" rel="noopener noreferrer">Public website code ↗</a>
+      </div>
+      <div class="dunes-facts"><div><strong>My role</strong><p>UI/UX collaboration; sole technical implementation of the public website and analytics dashboard.</p></div><div><strong>Team</strong><p>Six people. Three of us contributed to UI/UX, including me; another teammate led visual identity, and other teammates led content planning.</p></div><div><strong>Context</strong><p>Developed with a cultural community that uses social media content to democratize knowledge and make specialized ideas easier to understand. Featured in <em>Next Culture Producer, Season 4: Text</em>, a Chanel Culture Fund and Power Station of Art initiative.</p></div></div>
+    </section>
+
+    <section class="dunes-section dunes-problem" aria-labelledby="challenge-title"><p class="dunes-kicker">01 / The interaction challenge</p><h2 id="challenge-title">A dictionary for lookup and exploration.</h2><p>A conventional list makes it easy to retrieve one entry, but it hides the relationships among concepts. This project needed both a direct route to a known term and a way to move through connected ideas. During research, I studied physical information archives and digital references such as Wikipedia to think about how discovery and navigation could coexist.</p><div class="dunes-contrast" role="group" aria-label="Two complementary ways to navigate"><div><span>Find</span><strong>Search a term in Chinese or English</strong><p>Reach a specific entry quickly.</p><video controls playsinline preload="none" poster="DunesDictionary/cover.png" aria-label="Demonstration of Chinese search locating a dictionary entry"><source src="DunesDictionary/chinese_search_web.mp4" type="video/mp4">Your browser cannot play this clip. <a href="DunesDictionary/chinese_search_web.mp4">Download the search demo</a>.</video></div><div><span>Explore</span><strong>Follow a connected <br class="dunes-desktop-break">concept</strong><p>Continue through related ideas without returning to a list.</p><video controls playsinline preload="none" poster="DunesDictionary/cover.png" aria-label="Demonstration of exploring a connected concept"><source src="DunesDictionary/explore_web.mp4" type="video/mp4">Your browser cannot play this clip. <a href="DunesDictionary/explore_web.mp4">Download the explore demo</a>.</video></div></div></section>
+
+    <section class="dunes-section" aria-labelledby="journeys-title">
+      <p class="dunes-kicker">02 / Three ways in</p>
+      <h2 id="journeys-title">One map, three entry points.</h2>
+      <p class="dunes-section-lede">Visitors can arrive at a concept through a search, a related entry, or the map itself. Each path leads back to the same connected dictionary.</p>
+      <div class="dunes-journeys dunes-journeys-video">
+        <article>
+          <div class="dunes-journey-copy"><span>01 / Search</span><h3>Find a known term.</h3><p>Search in Chinese or English, choose a result, and let the map move to its entry.</p></div>
+          <video controls playsinline preload="none" poster="DunesDictionary/cover.png" aria-label="Search result locating and opening a dictionary entry"><source src="DunesDictionary/search-locate-read-web.mp4" type="video/mp4">Your browser cannot play this clip. <a href="DunesDictionary/search-locate-read-web.mp4">Download the search demonstration</a>.</video>
+        </article>
+        <article>
+          <div class="dunes-journey-copy"><span>02 / Connections</span><h3>Follow an idea.</h3><p>Open a related term from an entry and continue reading without returning to the search results.</p></div>
+          <video controls playsinline preload="none" poster="DunesDictionary/cover.png" aria-label="Following a related term from one dictionary entry to another"><source src="DunesDictionary/read-connect-continue-web.mp4" type="video/mp4">Your browser cannot play this clip. <a href="DunesDictionary/read-connect-continue-web.mp4">Download the connection demonstration</a>.</video>
+        </article>
+        <article>
+          <div class="dunes-journey-copy"><span>03 / Map</span><h3>Browse what catches your eye.</h3><p>Move through the visual map, choose a concept, and open its entry to learn more.</p></div>
+          <video controls playsinline preload="none" poster="DunesDictionary/cover.png" aria-label="Browsing the dictionary map and choosing a concept"><source src="DunesDictionary/worldmap-browse-choose-web.mp4" type="video/mp4">Your browser cannot play this clip. <a href="DunesDictionary/worldmap-browse-choose-web.mp4">Download the map demonstration</a>.</video>
+        </article>
+      </div>
+    </section>
+
+    <section class="dunes-section" aria-labelledby="architecture-title">
+      <p class="dunes-kicker">03 / How I built it</p>
+      <h2 id="architecture-title">The public site and admin workflow.</h2>
+      <p class="dunes-section-lede">I built the interactive public site with HTML, CSS, JavaScript, and Canvas, plus a separate admin site for analytics and content updates.</p>
+      <div class="dunes-flow-group">
+        <p class="dunes-flow-title">Visitor flow</p>
+        <div class="dunes-architecture dunes-architecture-simple" role="img" aria-label="Visitor flow: search, browse the map, or follow a related term; the Canvas map navigates to the concept; the visitor reads its entry.">
+          <div class="dunes-flow"><div class="dunes-node"><strong>Search, browse, or follow</strong></div><span class="dunes-arrow" aria-hidden="true">→</span><div class="dunes-node"><strong>Canvas navigation</strong></div><span class="dunes-arrow" aria-hidden="true">→</span><div class="dunes-node"><strong>Read an entry</strong></div></div>
+        </div>
+      </div>
+      <div class="dunes-flow-group">
+        <p class="dunes-flow-title">Usage analytics</p>
+        <div class="dunes-architecture dunes-architecture-simple" role="img" aria-label="Usage analytics: public-site interactions are recorded by an Express API in SQLite and viewed in the admin dashboard.">
+          <div class="dunes-flow"><div class="dunes-node"><strong>Visitor activity</strong></div><span class="dunes-arrow" aria-hidden="true">→</span><div class="dunes-node"><strong>Express + SQLite</strong></div><span class="dunes-arrow" aria-hidden="true">→</span><div class="dunes-node"><strong>Admin insights</strong></div></div>
+        </div>
+      </div>
+      <div class="dunes-flow-group">
+        <p class="dunes-flow-title">Content publishing</p>
+        <div class="dunes-architecture dunes-architecture-simple" role="img" aria-label="Content publishing: an administrator uploads Excel, previews changes, and publishes the dictionary entries stored as JSON.">
+          <div class="dunes-flow"><div class="dunes-node"><strong>Upload Excel</strong></div><span class="dunes-arrow" aria-hidden="true">→</span><div class="dunes-node"><strong>Preview changes</strong></div><span class="dunes-arrow" aria-hidden="true">→</span><div class="dunes-node"><strong>Publish JSON entries</strong></div></div>
+        </div>
+      </div>
+      <div class="dunes-decision">
+        <p class="dunes-kicker">A technical decision</p>
+        <h3>Keep the map in place while zooming.</h3>
+        <div class="dunes-decision-grid">
+          <div><strong>Challenge</strong><p>Zooming a large map can move the area a visitor wants to explore out of view.</p></div>
+          <div><strong>Approach</strong><p>I recalculated the map offset around the cursor or pinch center as the scale changed.</p></div>
+          <div><strong>Result</strong><p>The chosen area stays in view during mouse or touch zoom.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dunes-section" aria-labelledby="future-title">
+      <p class="dunes-kicker">04 / Future steps</p>
+      <h2 id="future-title">An integrated editing workspace.</h2>
+      <div class="dunes-architecture dunes-planned" role="img" aria-label="Future workflow: editors create and revise entries in a workspace on the existing server; entries move from JSON files into a database, then published content reaches the public site.">
+        <div class="dunes-flow">
+          <div class="dunes-node"><span>Editors</span><strong>Editing workspace</strong><small>Create · revise · review</small></div>
+          <span class="dunes-arrow" aria-hidden="true">→</span>
+          <div class="dunes-node"><span>Storage</span><strong>Entry database</strong><small>Replace JSON files</small></div>
+          <span class="dunes-arrow" aria-hidden="true">→</span>
+          <div class="dunes-node"><span>Public site</span><strong>Published entries</strong><small>Keep the dictionary current</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dunes-section dunes-final" aria-labelledby="iteration-title"><p class="dunes-kicker">05 / Iteration &amp; limits</p><h2 id="iteration-title">Launched, with room to grow.</h2><p>I refined the motion between entries. For the project’s presentation in <em>Next Culture Producer, Season 4: Text</em>, a Chanel Culture Fund and Power Station of Art initiative, I adapted the site for offline iPad interaction without admin tracking and for automatic playback on a large display.</p><div class="dunes-link-list"><a href="https://dunes-dictionary.com/" target="_blank" rel="noopener noreferrer">Public website ↗</a><a href="https://github.com/Yiqi71/dunes_dictionary_public" target="_blank" rel="noopener noreferrer">Public code ↗</a></div><a href="ux-engineering.html#selected">← Back to selected work</a></section>
+  </main>
+  <script src="assets/js/dunes-case.js" defer></script>
+</body>
+</html>

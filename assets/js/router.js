@@ -123,8 +123,8 @@ function renderPortfolio() {
                 <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-4" aria-label="Open portfolio project 4">
                     <img alt="portfolio 4 cover" src="PortfolioPics/4-1.png">
                 </a>
-                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-5" aria-label="Open portfolio project 5">
-                    <img alt="portfolio 5 cover" src="PortfolioPics/5-1.png">
+                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-5" aria-label="Open Dunes Dictionary case study">
+                    <img alt="Dunes Dictionary interactive concept map and open entry" src="DunesDictionary/cover.png">
                 </a>
             </div>
         </div>

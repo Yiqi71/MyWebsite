@@ -2,7 +2,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const portfolioProjectId = urlParams.get("id");
 const detailRoot = document.getElementById("project-detail");
 
-fetch("data/portfolio-projects.json")
+if (portfolioProjectId === "portfolio-5") {
+    window.location.replace("dunes-dictionary.html");
+}
+
+if (portfolioProjectId !== "portfolio-5") fetch("data/portfolio-projects.json")
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}`);
