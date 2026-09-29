@@ -2,8 +2,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 const projectId = urlParams.get('id');
 
-// Older links to the featured project should open its dedicated case study.
-if (projectId === 'QC-webpage') {
+// Older links to featured projects should open their dedicated case studies.
+if (projectId === 'hi') {
+  window.location.replace('hi.html');
+} else if (projectId === 'QC-webpage') {
   window.location.replace('quantum-atlas.html');
 } else {
 // 从 JSON 加载项目数据
