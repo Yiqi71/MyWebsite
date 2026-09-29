@@ -35,7 +35,15 @@
 }
 
 html.selected-detail body.portfolio-detail-page #project-detail img {
+    width: min(82%, 1200px);
+    max-width: 1200px;
+    margin-inline: auto;
     background-color: transparent;
+}
+
+html.selected-detail body.portfolio-detail-page #project-detail {
+    gap: clamp(16px, 2vw, 28px);
+    padding-block: clamp(20px, 3vw, 48px);
 }
 
 @media(max-width: 650px) {
