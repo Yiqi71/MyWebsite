@@ -23,11 +23,14 @@ html { scroll-behavior: smooth; }
 .ux-section-heading h2, .ux-about h2 { margin: 0; max-width: 760px; font: 500 clamp(31px, 3.5vw, 50px)/1.13 Futura, Manrope, sans-serif; letter-spacing: -.04em; }
 .ux-section-heading > p:last-child { max-width: 650px; margin: 18px 0 0; font-size: 18px; line-height: 1.5; }
 .ux-feature-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; }
-.ux-card { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); min-width: 0; min-height: 380px; background: rgba(255,255,255,.52); border: 1px solid var(--border-color); }
+.ux-card { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); min-width: 0; min-height: 380px; overflow: hidden; background: rgba(255,255,255,.52); border: 1px solid var(--border-color); cursor: pointer; transition: border-color .25s ease, box-shadow .25s ease; }
+.ux-card:hover { border-color: rgba(57,55,57,.34); box-shadow: 0 14px 34px rgba(57,55,57,.08); }
+.ux-card-hit { position: absolute; inset: 0; z-index: 1; }
+.ux-page .ux-card-hit:focus-visible { outline: 3px solid #4d657d; outline-offset: -4px; }
 
 .ux-media { display: block; min-width: 0; overflow: hidden; background: #8a929d; }
 .ux-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .35s ease; }
-a.ux-media:hover img { transform: scale(1.025); }
+.ux-card:hover .ux-media img, .ux-card:focus-within .ux-media img { transform: scale(1.025); }
 
 .ux-card-copy { display: flex; flex-direction: column; flex: 1; padding: clamp(24px, 3vw, 42px); }
 .ux-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
@@ -38,7 +41,9 @@ a.ux-media:hover img { transform: scale(1.025); }
 .ux-status { padding: 5px 9px; border: 1px solid rgba(57,55,57,.25); border-radius: 100px; font-size: 12px; white-space: nowrap; }
 .ux-card h3 { margin: 34px 0 12px; font: 500 clamp(27px, 2.7vw, 38px)/1.14 Futura, Manrope, sans-serif; letter-spacing: -.025em; }
 .ux-card p { margin: 0; max-width: 600px; font-size: 17px; line-height: 1.55; }
-.ux-card-links { display: flex; flex-wrap: wrap; gap: 24px; margin-top: auto; padding-top: 30px; font-size: 15px; font-weight: 700; }
+.ux-card-links { position: relative; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: auto; padding-top: 30px; font-size: 15px; font-weight: 700; }
+.ux-card-links .ux-resource-link { display: inline-flex; align-items: center; padding: 8px 13px; border: 1px solid rgba(57,55,57,.55); border-radius: 100px; line-height: 1.2; transition: background-color .2s ease, border-color .2s ease; }
+.ux-card-links .ux-resource-link:hover { background: rgba(57,55,57,.08); border-color: #393739; text-decoration: none; }
 .ux-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; min-height: 100%; background: linear-gradient(135deg, #98a3aa, #596b77); color: #fff; }
 .ux-placeholder span { font: 600 clamp(45px, 7vw, 84px)/1 Futura, Manrope, sans-serif; letter-spacing: -.07em; }
 .ux-placeholder small { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
@@ -55,4 +60,4 @@ a.ux-media:hover img { transform: scale(1.025); }
 .ux-about-links { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 32px; font-weight: 700; }
 .ux-footer { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 100px; height: auto; padding: 28px clamp(20px, 5vw, 76px); border-top: 1px solid var(--border-color); font-size: 14px; font-weight: 700; }
 @media (max-width: 760px) { .ux-header { align-items: flex-start; flex-direction: column; gap: 18px; } .ux-header nav { gap: 18px; font-size: 15px; } .ux-hero { padding: 80px 0 70px; } .ux-feature-grid, .ux-all-grid, .ux-about { grid-template-columns: 1fr; } .ux-card { grid-template-columns: 1fr; min-height: 0; } .ux-media, .ux-placeholder { min-height: 0; aspect-ratio: 16 / 10; } .ux-media img { aspect-ratio: 16 / 10; } .ux-card-copy { padding: 24px; } .ux-card h3 { margin-top: 24px; } .ux-section { padding: 60px 0 76px; } .ux-about { gap: 24px; } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ux-media img { transition: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ux-card, .ux-media img { transition: none; } .ux-card:hover .ux-media img, .ux-card:focus-within .ux-media img { transform: none; } }
