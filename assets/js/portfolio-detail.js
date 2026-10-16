@@ -2,11 +2,14 @@ const urlParams = new URLSearchParams(window.location.search);
 const portfolioProjectId = urlParams.get("id");
 const detailRoot = document.getElementById("project-detail");
 
-if (portfolioProjectId === "portfolio-5") {
-    window.location.replace("dunes-dictionary.html");
+if (portfolioProjectId === "portfolio-5" || portfolioProjectId === "portfolio-6") {
+    const destination = portfolioProjectId === "portfolio-5"
+        ? "dunes-dictionary.html"
+        : "ai-interviewer-vr.html";
+    window.location.replace(destination);
 }
 
-if (portfolioProjectId !== "portfolio-5") fetch("data/portfolio-projects.json")
+if (portfolioProjectId !== "portfolio-5" && portfolioProjectId !== "portfolio-6") fetch("data/portfolio-projects.json")
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}`);

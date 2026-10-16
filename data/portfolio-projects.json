@@ -14,7 +14,7 @@
   },
   {
     "id": "portfolio-2",
-    "title": "Portfolio Project 2",
+    "title": "UnderCurrent",
     "cover": "PortfolioPics/2-1.png",
     "images": [
       "PortfolioPics/2-1.png",
@@ -27,7 +27,7 @@
   },
   {
     "id": "portfolio-3",
-    "title": "Portfolio Project 3",
+    "title": "Legend at NYU",
     "cover": "PortfolioPics/3-1.png",
     "images": [
       "PortfolioPics/3-1.png",
@@ -50,11 +50,17 @@
   },
   {
     "id": "portfolio-5",
-    "title": "Portfolio Project 5",
+    "title": "Dunes Dictionary",
     "cover": "DunesDictionary/cover.png",
     "images": [
       "PortfolioPics/5-1.png",
       "PortfolioPics/5-2.png"
     ]
+  },
+  {
+    "id": "portfolio-6",
+    "title": "AI interviewer in VR",
+    "cover": "",
+    "images": []
   }
 ]

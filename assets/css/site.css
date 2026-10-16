@@ -250,6 +250,17 @@ main {
     line-height: 0;
 }
 
+.portfolio-feature-grid {
+    width: calc(100% - clamp(32px, 8vw, 120px));
+    margin: clamp(16px, 3vw, 40px) auto 0;
+    line-height: normal;
+}
+
+.portfolio-feature-grid .ux-card-hit:focus-visible {
+    outline: 3px solid #4d657d;
+    outline-offset: -4px;
+}
+
 .portfolio-cover-grid .portfolio-cover img {
     width: 100%;
     height: auto;
@@ -499,6 +510,11 @@ main.other-works-columns .project-media {
     .portfolio-cover-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+        width: calc(100% - 24px);
+        margin-top: 12px;
+    }
+
+    .portfolio-feature-grid {
         width: calc(100% - 24px);
         margin-top: 12px;
     }

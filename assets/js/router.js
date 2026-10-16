@@ -110,22 +110,42 @@ function renderPortfolio() {
         <div class="portfolio-gallery">
             <!-- <img alt="portfolio 6" src="PortfolioPics/7.png"> -->
             <header class="portfolio-intro header-special">Hello,<br>I'm Yiqi.</header>
-            <div class="portfolio-cover-grid">
-                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-1" aria-label="Open portfolio project 1">
-                    <img alt="portfolio 1 cover" src="PortfolioPics/1-1.png">
-                </a>
-                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-2" aria-label="Open portfolio project 2">
-                    <img alt="portfolio 2 cover" src="PortfolioPics/2-1.png">
-                </a>
-                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-3" aria-label="Open portfolio project 3">
-                    <img alt="portfolio 3 cover" src="PortfolioPics/3-1.png">
-                </a>
-                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-4" aria-label="Open portfolio project 4">
-                    <img alt="Two people viewing the Behind the Ad Slot website on a monitor" src="PortfolioPics/behind-ad-slot-cover.png">
-                </a>
-                <a class="portfolio-cover" href="portfolio-detail.html?id=portfolio-5" aria-label="Open Dunes Dictionary case study">
-                    <img alt="Dunes Dictionary interactive concept map and open entry" src="DunesDictionary/cover.png">
-                </a>
+            <div class="portfolio-feature-grid ux-feature-grid">
+                <article class="ux-card">
+                    <a class="ux-card-hit" href="waybox.html" aria-label="Open the Waybox case study"></a>
+                    <div class="ux-media"><img alt="Waybox website and connected app interfaces" src="PortfolioPics/waybox-cover.png" loading="eager"></div>
+                    <div class="ux-card-copy"><div class="ux-card-head"><span class="ux-card-index"><span class="ux-number">01</span><span class="ux-year"><time datetime="2026">2026</time> · ongoing</span></span><span class="ux-status-list"><span class="ux-status">Website live</span><span class="ux-status">App in design</span></span></div><h3>Waybox</h3><p>Leading UX across the live website and a connected-device app in design. My work covers the website UX and part of its UI, plus the app’s flows and interfaces.</p></div>
+                </article>
+                <article class="ux-card">
+                    <a class="ux-card-hit" href="dunes-dictionary.html" aria-label="Open the Dunes Dictionary case study"></a>
+                    <div class="ux-media"><img alt="Dunes Dictionary interactive concept map and open entry" src="DunesDictionary/cover.png" loading="lazy"></div>
+                    <div class="ux-card-copy"><div class="ux-card-head"><span class="ux-card-index"><span class="ux-number">02</span><span class="ux-year"><time datetime="2025-08">Aug</time>–<time datetime="2025-10">Oct 2025</time></span></span><span class="ux-status-list"><span class="ux-status">Launched website</span><span class="ux-status">Full-stack development</span></span></div><h3>Dunes Dictionary</h3><p>An interactive dictionary and connected concept map. I contributed to the UI/UX and independently built the public website and admin tools for analytics and Excel-based content updates as part of a six-person team.</p><div class="ux-card-links"><a class="ux-resource-link" href="https://dunes-dictionary.com/" target="_blank" rel="noopener noreferrer">Live site ↗</a><a class="ux-resource-link" href="https://github.com/Yiqi71/dunes_dictionary_public" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+                </article>
+                <article class="ux-card">
+                    <a class="ux-card-hit" href="ai-interviewer-vr.html" aria-label="Open the AI interviewer in VR study"></a>
+                    <div class="ux-media"><div class="ux-placeholder"><span>VR</span><small>Mixed-methods study</small></div></div>
+                    <div class="ux-card-copy"><div class="ux-card-head"><span class="ux-card-index"><span class="ux-number">03</span><span class="ux-year">Ongoing</span></span><span class="ux-status">Research in progress</span></div><h3>AI interviewer in VR</h3><p>A mixed-methods study with 58 participants examining how people respond to an AI interviewer in VR during emotionally sensitive life-story interviews.</p></div>
+                </article>
+                <article class="ux-card">
+                    <a class="ux-card-hit" href="portfolio-detail.html?id=portfolio-4" aria-label="Open the Behind the Ad Slot project"></a>
+                    <div class="ux-media"><img alt="Two people viewing the Behind the Ad Slot website on a monitor" src="PortfolioPics/behind-ad-slot-cover.png" loading="lazy"></div>
+                    <div class="ux-card-copy"><div class="ux-card-head"><span class="ux-card-index"><span class="ux-number">04</span><span class="ux-year"><time datetime="2025-11">Nov</time>–<time datetime="2025-12">Dec 2025</time></span></span><span class="ux-status">AI-powered website</span></div><h3>Behind the Ad Slot</h3><p>A website that uses an AI API to identify the styles of an outfit and its surroundings, then recommends real products. An informal evaluation explored how recommendation metrics might affect purchase interest.</p></div>
+                </article>
+                <article class="ux-card">
+                    <a class="ux-card-hit" href="portfolio-detail.html?id=portfolio-3" aria-label="Open the Legends at NYU project"></a>
+                    <div class="ux-media"><img alt="People playing the Legends at NYU collaborative board game" src="PortfolioPics/3-1.png" loading="lazy"></div>
+                    <div class="ux-card-copy"><div class="ux-card-head"><span class="ux-card-index"><span class="ux-number">05</span><span class="ux-year"><time datetime="2024-10">Oct 2024</time>–<time datetime="2025-01">Jan 2025</time></span></span><span class="ux-status">Board game</span></div><h3>Legends at NYU</h3><p>A collaborative board game designed to make early participation safer and more predictable for international students.</p></div>
+                </article>
+                <article class="ux-card">
+                    <a class="ux-card-hit" href="portfolio-detail.html?id=portfolio-2" aria-label="Open the UnderCurrent project"></a>
+                    <div class="ux-media"><img alt="UnderCurrent reflection app shown on two mobile phones" src="PortfolioPics/2-1.png" loading="lazy"></div>
+                    <div class="ux-card-copy"><div class="ux-card-head"><span class="ux-card-index"><span class="ux-number">06</span><span class="ux-year"><time datetime="2025-09">Sep</time>–<time datetime="2025-12">Dec 2025</time></span></span><span class="ux-status">UI/UX design</span></div><h3>UnderCurrent</h3><p>A reflection app that helps fans examine the systems shaping emotional risk without placing blame on individuals.</p></div>
+                </article>
+                <article class="ux-card">
+                    <a class="ux-card-hit" href="portfolio-detail.html?id=portfolio-1" aria-label="Open the Chirp project"></a>
+                    <div class="ux-media"><img alt="Chirp low-friction safety device for older adults" src="PortfolioPics/1-1.png" loading="lazy"></div>
+                    <div class="ux-card-copy"><div class="ux-card-head"><span class="ux-card-index"><span class="ux-number">07</span><span class="ux-year"><time datetime="2025-02">Feb</time>–<time datetime="2025-10">Oct 2025</time></span></span><span class="ux-status">Service design</span></div><h3>Chirp</h3><p>A low-burden communication system connecting older adults, community services, and county responders through actionable safety signals.</p></div>
+                </article>
             </div>
         </div>
         <div class="scroll-hint" aria-hidden="true"></div>

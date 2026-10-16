@@ -88,6 +88,13 @@ html { scroll-behavior: smooth; }
 .dunes-flow-title { margin: 0 0 12px; color: #755f56; font-size: 14px; font-weight: 700; }
 .dunes-architecture-simple { margin-top: 0; padding: 0; }
 .dunes-architecture-simple .dunes-flow { align-items: center; margin: 0; }
+
+/* Dunes Dictionary cards use fill and spacing without outlined containers. */
+.dunes-dictionary-page .dunes-journeys article,
+.dunes-dictionary-page .dunes-decision-grid > div,
+.dunes-dictionary-page .dunes-node {
+  border: 0;
+}
 .dunes-architecture-simple .dunes-node { display: flex; align-items: center; min-height: 86px; padding: 18px 20px; }
 .dunes-architecture-simple .dunes-node strong { font-size: 19px; line-height: 1.3; }
 @media (max-width: 750px) { .dunes-architecture-simple .dunes-flow { align-items: stretch; } .dunes-architecture-simple .dunes-node { min-height: 0; } }
